@@ -42,6 +42,7 @@ public class BaseView<V extends ViewDataBinding,M extends BaseViewModel> extends
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        doOnCreateFunction();
         try {
             binding=DataBindingUtil.setContentView(this,onCreateSetView());
         } catch (Exception e) {
