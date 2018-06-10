@@ -18,6 +18,7 @@ public abstract class BaseAdapter<T, VH extends RecyclerView.ViewHolder> extends
     public List<T> mList; // 数据源
     public LayoutInflater inflater;
 
+
     public BaseAdapter(Context context) {
         this.mContext = context;
         this.mList = new ArrayList<>();
