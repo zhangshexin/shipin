@@ -1,10 +1,13 @@
 package com.bibi.shipin.player;
 
+
+import java.io.Serializable;
+
 /**
  * Created by zhangshexin on 2018/6/10.
  */
 
-public class PlayerBean {
+public class PlayerBean implements Serializable {
     public String getUrl() {
         return url;
     }

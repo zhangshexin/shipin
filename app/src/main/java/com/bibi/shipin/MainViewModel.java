@@ -1,7 +1,10 @@
 package com.bibi.shipin;
 
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.support.v4.view.ViewPager;
+import android.view.ViewTreeObserver;
 
 import com.aliyun.vodplayer.media.AliyunVodPlayer;
 import com.aliyun.vodplayer.media.IAliyunVodPlayer;
@@ -18,12 +21,13 @@ import java.util.List;
 
 public class MainViewModel extends BaseViewModel {
     private MainView mainView;
-    private MainAdapter adapter;
+    private MainFragmentAdapter adapter;
     private AliyunVodPlayer aliyunVodPlayer;
+    private List<MainFragment> pages=new ArrayList<>();
+    private List<PlayerBean> beans=new ArrayList<>();
 
     public MainViewModel(MainView mainView) {
         this.mainView = mainView;
-
     }
 
     /**
@@ -39,58 +43,126 @@ public class MainViewModel extends BaseViewModel {
         aliyunVodPlayer.setOnSeekCompleteListener(new MySeekCompleteListener(this));
         aliyunVodPlayer.setOnStoppedListner(new MyStoppedListener(this));
         aliyunVodPlayer.setOnChangeQualityListener(new MyChangeQualityListener(this));
-        aliyunVodPlayer.setReferer("http://aliyun.com");
+        aliyunVodPlayer.setVideoScalingMode(IAliyunVodPlayer.VideoScalingMode.VIDEO_SCALING_MODE_SCALE_TO_FIT_WITH_CROPPING);
+        //监权，可以先不加
+//        aliyunVodPlayer.setReferer("");
         aliyunVodPlayer.enableNativeLog();
     }
-
+    private int currentPosition=0;
     @Override
     public void onCreate() {
         super.onCreate();
-        adapter = new MainAdapter(mainView,aliyunVodPlayer);
-        LinearLayoutManager llm = new LinearLayoutManager(mainView);
-        llm.setOrientation(LinearLayoutManager.VERTICAL);
-        mainView.getBinding().videoListView.setLayoutManager(llm);
+        initPlayer();
+        initData();
+
+
+
+
+        adapter = new MainFragmentAdapter(mainView.getSupportFragmentManager(),pages);
+        mainView.getBinding().videoListView.setOffscreenPageLimit(0);
         mainView.getBinding().videoListView.setAdapter(adapter);
-        mainView.getBinding().videoListView.setOnScrollListener(new RecyclerView.OnScrollListener() {
+        mainView.getBinding().videoListView.setCurrentItem(0);
+        mainView.getBinding().videoListView.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
-            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
-                super.onScrollStateChanged(recyclerView, newState);
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+                mainView.logE("onPageScrolled: "+position);
             }
 
             @Override
-            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-                super.onScrolled(recyclerView, dx, dy);
+            public void onPageSelected(int position) {
+                stopRefreshProgress();
+                currentPosition=position;
+                mainView.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        adapter.getItem(currentPosition).getViewModel().changeView();
+                    }
+                });
+                mainView.logE("   选中的页   "+position);
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
             }
         });
-//        mainView.getBinding().videoListView.setOnFlingListener(new RecyclerView.OnFlingListener() {
-//            @Override
-//            public boolean onFling(int velocityX, int velocityY) {
-//                int currentPosition=adapter.getLayoutPosition();
-//                mainView.logE("velocityY:"+velocityY+"---------------velocityX:"+velocityX);
-//                if(currentPosition!=-1)
-//                    if(10000<Math.abs(velocityX)){
-//                        if(velocityX<0&&currentPosition!=0){
-//                            //向上
-//                            mainView.getBinding().videoListView.smoothScrollToPosition(currentPosition-1);
-//                        }else if(velocityX>0&&currentPosition!=adapter.mList.size()-1){
-//                            //向下
-//                            mainView.getBinding().videoListView.smoothScrollToPosition(currentPosition+1);
-//                        }
-//                    }
-//                return true;
-//            }
-//        });
-        List<PlayerBean> beans=new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            PlayerBean bean=new PlayerBean();
-            bean.setThumbUrl("https://img-blog.csdn.net/20170423125838469?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvSnNhZ2FjaXR5/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center");
-            bean.setTitle("lala");
-            bean.setUrl("http://player.alicdn.com/video/aliyunmedia.mp4");
-            beans.add(bean);
-        }
-        adapter.loadMoreData(beans);
-        initPlayer();
+
+
+
+        mainView.getBinding().videoListView.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
+            @Override
+            public boolean onPreDraw() {
+                pages.get(0).getViewModel().changeView();
+                mainView.getBinding().videoListView.getViewTreeObserver().removeOnPreDrawListener(this);
+                return true;
+            }
+        });
     }
+    private void initData(){
+
+            PlayerBean bean1=new PlayerBean();
+            bean1.setThumbUrl("https://p1.pstatp.com/large/8813000883a6d59bffb4.jpg");
+            bean1.setTitle("玩命的职业【抖音短视频】");
+            bean1.setUrl("http://player.alicdn.com/video/aliyunmedia.mp4");
+            beans.add(bean1);
+
+        PlayerBean bean2=new PlayerBean();
+        bean2.setThumbUrl("https://p3.pstatp.com/large/8cb3000263c43fa87d4c.jpg");
+        bean2.setTitle("因为生活的不好，父母早上给我带来二箱奶，心里说不出来的难受【抖音短视频】");
+        bean2.setUrl("http://livetest.aliyunlive.com/9725750fa11648eba3426f65920ccecd/bce6da0b4afd43bb9fd06af269816b82-4b6ffae84f2e1d243955ecaedcf11a3e.m3u8");
+        beans.add(bean2);
+
+        PlayerBean bean3=new PlayerBean();
+        bean3.setThumbUrl("https://p3.pstatp.com/large/8c7f000eb468687f8fc2.jpg");
+        bean3.setTitle("你知道你为什么自卑吗？【抖音短视频】");
+        bean3.setUrl("http://livetest.aliyunlive.com/af6b16749fb44f2cb26c7c9b7cf3e3b2/3d8d93f8791c4e019388fd57e7dc9efb-4b6ffae84f2e1d243955ecaedcf11a3e.m3u8");
+        beans.add(bean3);
+
+        PlayerBean bean4=new PlayerBean();
+        bean4.setThumbUrl("https://p3.pstatp.com/large/8cb7000a22518f66d104.jpg");
+        bean4.setTitle("曹德旺的创业故事【抖音短视频】");
+        bean4.setUrl("http://saas-video-qp.qupaicloud.com/299B3F9B-15BE76DF272-1767-9096-266-17559/8b8c03c80c2f43bf903a76621a6008d8.m3u8");
+        beans.add(bean4);
+
+            for (PlayerBean pb:beans){
+                MainFragment fragment=new MainFragment();
+                Bundle data=new Bundle();
+                data.putSerializable("bean",pb);
+                fragment.setArguments(data);
+                fragment.setAliyunVodPlayer(aliyunVodPlayer);
+                pages.add(fragment);
+            }
+
+    }
+
+//    @Override
+//    public void onResume() {
+//        if(aliyunVodPlayer!=null) {
+//            aliyunVodPlayer.resume();
+//        }
+//        super.onResume();
+//    }
+//
+//    @Override
+//    public void onPause() {
+//        if(aliyunVodPlayer!=null) {
+//            aliyunVodPlayer.pause();
+//        }
+//        super.onPause();
+//    }
+
+    @Override
+    public void onDestory() {
+        if(aliyunVodPlayer!=null) {
+            aliyunVodPlayer.stop();
+            aliyunVodPlayer.release();
+        }
+        stopRefreshProgress();
+        super.onDestory();
+    }
+
+
     ////////////////////////////ALI 回调监控//////////////////////////////////
 
     /**
@@ -137,6 +209,7 @@ public class MainViewModel extends BaseViewModel {
     private void onPrepared(){
         //准备完成，可以开始播放
         aliyunVodPlayer.start();
+        pages.get(currentPosition).getViewModel().prepareOk();
     }
 
     /**
@@ -158,10 +231,30 @@ public class MainViewModel extends BaseViewModel {
             }
         }
     }
+    private Handler mHandler=new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            if(msg.what==1){
+                showProgress();
+            }
+        }
+    };
+    private void stopRefreshProgress(){
+        mHandler.removeMessages(1);
+    }
     private void onFirstFrameStart(){
         //首帧加载完成，开始显示进度
+        showProgress();
+        mHandler.sendEmptyMessageDelayed(1,1000);
     }
-
+    private void showProgress(){
+        int curPosition = (int) aliyunVodPlayer.getCurrentPosition();
+        int duration = (int) aliyunVodPlayer.getDuration();
+        int bufferPosition = aliyunVodPlayer.getBufferingPosition();
+        mainView.getBinding().playerProgress.setMax(duration);
+        mainView.getBinding().playerProgress.setSecondaryProgress(bufferPosition);
+        mainView.getBinding().playerProgress.setProgress(curPosition);
+    }
     /**
      * 播放器错误监听器
      */
@@ -183,7 +276,7 @@ public class MainViewModel extends BaseViewModel {
     }
 
     private void onError(int arg0, int arg1, String msg){
-
+        mainView.logE(msg);
     }
 
     /**
@@ -206,6 +299,8 @@ public class MainViewModel extends BaseViewModel {
     }
     private void onCompletion(){
         //播放结束
+        //循环播放
+        aliyunVodPlayer.replay();
     }
 
     /**

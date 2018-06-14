@@ -5,6 +5,7 @@ import android.databinding.ViewDataBinding;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,18 @@ import com.bibi.shipin.base.impl.IBaseView;
 public abstract class BaseFragment<V extends ViewDataBinding, VM extends BaseViewModel> extends Fragment implements IBaseView {
     protected V binding;
     protected VM viewModel;
+
+    public void setViewModel(VM viewModel) {
+        this.viewModel = viewModel;
+    }
+
+    public VM getViewModel() {
+        return viewModel;
+    }
+
+    public V getBinding() {
+        return binding;
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -40,6 +53,14 @@ public abstract class BaseFragment<V extends ViewDataBinding, VM extends BaseVie
     public void onDestroy() {
         super.onDestroy();
         viewModel = null;
+    }
+
+    @Override
+    public void onAttachFragment(Fragment childFragment) {
+        if(viewModel!=null)
+            viewModel.onAttachFragment();
+        super.onAttachFragment(childFragment);
+
     }
 
     @Nullable

@@ -1,5 +1,7 @@
 package com.bibi.shipin.base;
 
+import android.app.Fragment;
+
 import com.bibi.shipin.base.impl.IBaseViewModel;
 
 /**
@@ -24,6 +26,11 @@ public class BaseViewModel implements IBaseViewModel {
 
     @Override
     public void onDestory() {
+
+    }
+
+    @Override
+    public void onAttachFragment() {
 
     }
 }

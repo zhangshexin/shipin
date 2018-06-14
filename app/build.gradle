@@ -43,4 +43,6 @@ dependencies {
     compile(name: 'AlivcReporter-1.1',ext: 'aar')
     compile(name: 'AlivcPlayer-3.4.5',ext: 'aar')
     compile(name: 'AliyunVodPlayer-3.4.5', ext: 'aar')
+
+    compile 'com.github.castorflex.verticalviewpager:library:19.0.1'
 }

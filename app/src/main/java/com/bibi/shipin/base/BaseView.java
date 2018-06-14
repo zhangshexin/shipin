@@ -1,5 +1,6 @@
 package com.bibi.shipin.base;
 
+import android.app.Fragment;
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
 import android.os.Bundle;
@@ -88,5 +89,12 @@ public class BaseView<V extends ViewDataBinding,M extends BaseViewModel> extends
     protected void onDestroy() {
         super.onDestroy();
         vm.onDestory();
+    }
+
+    @Override
+    public void onAttachFragment(Fragment fragment) {
+        super.onAttachFragment(fragment);
+        if(vm!=null)
+            vm.onAttachFragment();
     }
 }
