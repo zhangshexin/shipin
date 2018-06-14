@@ -12,16 +12,6 @@
         tools:context="com.bibi.shipin.MainView"
         android:background="@color/colorPrimary">
 
-
-        <pl.droidsonroids.gif.GifImageView
-            android:id="@+id/imageView_loading"
-            android:layout_width="400dip"
-            android:layout_height="300dip"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:src="@mipmap/loading" />
         <fr.castorflex.android.verticalviewpager.VerticalViewPager
             android:layout_width="match_parent"
             android:layout_height="match_parent"

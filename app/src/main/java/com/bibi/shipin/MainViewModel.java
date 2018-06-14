@@ -5,6 +5,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v4.view.ViewPager;
 import android.view.ViewTreeObserver;
+import android.view.WindowManager;
 
 import com.aliyun.vodplayer.media.AliyunVodPlayer;
 import com.aliyun.vodplayer.media.IAliyunVodPlayer;
@@ -54,9 +55,7 @@ public class MainViewModel extends BaseViewModel {
         super.onCreate();
         initPlayer();
         initData();
-
-
-
+        mainView.getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
         adapter = new MainFragmentAdapter(mainView.getSupportFragmentManager(),pages);
         mainView.getBinding().videoListView.setOffscreenPageLimit(0);
@@ -245,7 +244,6 @@ public class MainViewModel extends BaseViewModel {
     private void onFirstFrameStart(){
         //首帧加载完成，开始显示进度
         showProgress();
-        mHandler.sendEmptyMessageDelayed(1,1000);
     }
     private void showProgress(){
         int curPosition = (int) aliyunVodPlayer.getCurrentPosition();
@@ -254,6 +252,7 @@ public class MainViewModel extends BaseViewModel {
         mainView.getBinding().playerProgress.setMax(duration);
         mainView.getBinding().playerProgress.setSecondaryProgress(bufferPosition);
         mainView.getBinding().playerProgress.setProgress(curPosition);
+        mHandler.sendEmptyMessageDelayed(1,1000);
     }
     /**
      * 播放器错误监听器
