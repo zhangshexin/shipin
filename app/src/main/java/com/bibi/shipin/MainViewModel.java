@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.view.ViewPager;
+import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.WindowManager;
 
@@ -20,7 +21,7 @@ import java.util.List;
  * Created by zhangshexin on 2018/6/8.
  */
 
-public class MainViewModel extends BaseViewModel {
+public class MainViewModel extends BaseViewModel implements View.OnClickListener {
     private MainView mainView;
     private MainFragmentAdapter adapter;
     private AliyunVodPlayer aliyunVodPlayer;
@@ -161,8 +162,19 @@ public class MainViewModel extends BaseViewModel {
         super.onDestory();
     }
 
-
-    ////////////////////////////ALI 回调监控//////////////////////////////////
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.addMediaBtn:
+                //录制或上传
+                break;
+            case R.id.msgBtn:
+                break;
+            case R.id.ucenterBtn:
+                break;
+        }
+    }
+////////////////////////////ALI 回调监控//////////////////////////////////
 
     /**
      * 循环播放

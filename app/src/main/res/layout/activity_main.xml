@@ -2,21 +2,26 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
     <data>
+
+        <variable
+            name="onClick"
+            type="android.view.View.OnClickListener" />
 
     </data>
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.bibi.shipin.MainView"
-        android:background="@color/colorPrimary">
+        android:background="@color/colorPrimary"
+        tools:context="com.bibi.shipin.MainView">
 
         <fr.castorflex.android.verticalviewpager.VerticalViewPager
+            android:id="@+id/videoListView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/videoListView">
-        </fr.castorflex.android.verticalviewpager.VerticalViewPager>
+            android:layout_height="match_parent" />
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -29,7 +34,7 @@
                 android:background="@color/linen"
                 android:maxLines="3"
                 android:textColor="@color/black"
-                android:textSize="16sp"/>
+                android:textSize="16sp" />
 
             <ProgressBar
                 android:id="@+id/player_progress"
@@ -37,6 +42,38 @@
                 android:layout_width="match_parent"
                 android:layout_height="2dip"
                 android:layout_alignParentBottom="true" />
+            <!--消息，添加视频，我的-->
+            <ImageView
+                android:id="@+id/msgBtn"
+                android:layout_width="45dip"
+                android:layout_height="45dip"
+                android:layout_above="@+id/addMediaBtn"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="8dip"
+                android:onClick="@{onClick}"
+                android:src="@drawable/icon_btn_msg" />
+
+            <ImageView
+                android:id="@+id/addMediaBtn"
+                android:layout_width="45dip"
+                android:layout_height="45dip"
+                android:layout_above="@+id/ucenterBtn"
+                android:layout_alignParentRight="true"
+                android:layout_margin="8dip"
+                android:onClick="@{onClick}"
+                android:src="@drawable/icon_btn_add_media" />
+
+            <ImageView
+                android:id="@+id/ucenterBtn"
+                android:layout_width="45dip"
+                android:layout_height="45dip"
+                android:layout_above="@+id/player_progress"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="8dip"
+                android:layout_marginRight="8dip"
+                android:onClick="@{onClick}"
+                android:src="@drawable/icon_btn_ucenter" />
         </RelativeLayout>
 
     </android.support.constraint.ConstraintLayout>
