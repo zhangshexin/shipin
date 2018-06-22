@@ -1,5 +1,6 @@
 package com.bibi.shipin;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -12,6 +13,7 @@ import com.aliyun.vodplayer.media.AliyunVodPlayer;
 import com.aliyun.vodplayer.media.IAliyunVodPlayer;
 import com.bibi.shipin.base.BaseViewModel;
 import com.bibi.shipin.player.PlayerBean;
+import com.bibi.shipin.record.RecordView;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
@@ -59,6 +61,7 @@ public class MainViewModel extends BaseViewModel implements View.OnClickListener
         mainView.getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
         adapter = new MainFragmentAdapter(mainView.getSupportFragmentManager(),pages);
+        mainView.getBinding().setOnClick(this);
         mainView.getBinding().videoListView.setOffscreenPageLimit(0);
         mainView.getBinding().videoListView.setAdapter(adapter);
         mainView.getBinding().videoListView.setCurrentItem(0);
@@ -136,21 +139,21 @@ public class MainViewModel extends BaseViewModel implements View.OnClickListener
 
     }
 
-//    @Override
-//    public void onResume() {
-//        if(aliyunVodPlayer!=null) {
-//            aliyunVodPlayer.resume();
-//        }
-//        super.onResume();
-//    }
-//
-//    @Override
-//    public void onPause() {
-//        if(aliyunVodPlayer!=null) {
-//            aliyunVodPlayer.pause();
-//        }
-//        super.onPause();
-//    }
+    @Override
+    public void onResume() {
+        if(aliyunVodPlayer!=null) {
+            aliyunVodPlayer.resume();
+        }
+        super.onResume();
+    }
+
+    @Override
+    public void onPause() {
+        if(aliyunVodPlayer!=null) {
+            aliyunVodPlayer.pause();
+        }
+        super.onPause();
+    }
 
     @Override
     public void onDestory() {
@@ -167,6 +170,7 @@ public class MainViewModel extends BaseViewModel implements View.OnClickListener
         switch (v.getId()){
             case R.id.addMediaBtn:
                 //录制或上传
+                mainView.startActivity(new Intent(mainView, RecordView.class));
                 break;
             case R.id.msgBtn:
                 break;

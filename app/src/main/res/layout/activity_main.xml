@@ -45,8 +45,8 @@
             <!--消息，添加视频，我的-->
             <ImageView
                 android:id="@+id/msgBtn"
-                android:layout_width="45dip"
-                android:layout_height="45dip"
+                android:layout_width="50dip"
+                android:layout_height="50dip"
                 android:layout_above="@+id/addMediaBtn"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="8dip"
@@ -55,8 +55,8 @@
 
             <ImageView
                 android:id="@+id/addMediaBtn"
-                android:layout_width="45dip"
-                android:layout_height="45dip"
+                android:layout_width="50dip"
+                android:layout_height="50dip"
                 android:layout_above="@+id/ucenterBtn"
                 android:layout_alignParentRight="true"
                 android:layout_margin="8dip"
@@ -65,8 +65,8 @@
 
             <ImageView
                 android:id="@+id/ucenterBtn"
-                android:layout_width="45dip"
-                android:layout_height="45dip"
+                android:layout_width="50dip"
+                android:layout_height="50dip"
                 android:layout_above="@+id/player_progress"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentRight="true"

@@ -5,7 +5,7 @@ android {
     defaultConfig {
         applicationId "com.bibi.shipin"
         minSdkVersion 16
-        targetSdkVersion 26
+        targetSdkVersion 22
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -22,6 +22,11 @@ android {
 
     repositories {
         flatDir { dirs 'libs' }
+    }
+
+    sourceSets.main{
+        jni.srcDirs = []
+        jniLibs.srcDirs "src/main/jniLibs"
     }
 }
 
@@ -45,4 +50,10 @@ dependencies {
     compile(name: 'AliyunVodPlayer-3.4.5', ext: 'aar')
 
     compile 'com.github.castorflex.verticalviewpager:library:19.0.1'
+    compile project(':AliyunSdk-RCE')
+
+    compile 'com.google.code.gson:gson:2.8.0'            //  ----Gson
+    compile 'com.squareup.okhttp3:okhttp:3.2.0'          //  ----OkHttp
+    compile 'com.aliyun.dpa:oss-android-sdk:2.4.4'   //---阿里云OSS上传库，如果不需要使用内部的VOD上传库可以不加这个依赖
+
 }

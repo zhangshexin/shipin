@@ -20,7 +20,11 @@ public class MainView extends BaseView<ActivityMainBinding,MainViewModel> {
     @Override
     public void doOnCreateFunction() {
         super.doOnCreateFunction();
-        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+
+        //权限申请
+        //读写sd卡
+        //相机
+
     }
 
     @Override
