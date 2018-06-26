@@ -30,7 +30,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".record.RecordView" android:screenOrientation="portrait"/>
-
+        <activity android:name=".player.VideoPlayerView" android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

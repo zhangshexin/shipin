@@ -1,5 +1,6 @@
 package com.bibi.shipin.record;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.hardware.Camera;
 import android.os.AsyncTask;
@@ -12,10 +13,12 @@ import com.aliyun.recorder.AliyunRecorderCreator;
 import com.aliyun.recorder.supply.AliyunIClipManager;
 import com.aliyun.recorder.supply.AliyunIRecorder;
 import com.aliyun.recorder.supply.RecordCallback;
+import com.aliyun.struct.recorder.CameraParam;
 import com.aliyun.struct.recorder.CameraType;
 import com.aliyun.struct.recorder.MediaInfo;
 import com.bibi.shipin.R;
 import com.bibi.shipin.base.BaseViewModel;
+import com.bibi.shipin.player.VideoPlayerView;
 import com.qu.preview.callback.OnFrameCallBack;
 
 import java.io.File;
@@ -37,13 +40,13 @@ public class RecordViewModel extends BaseViewModel implements View.OnClickListen
     private int minDuration=1*1000;
 
     //输出路径
-    private String outPuthPath = Environment.getExternalStorageDirectory() + File.separator + Environment.DIRECTORY_DCIM + File.separator + System.currentTimeMillis() + ".mp4";
+    private String outPuthPath = Environment.getExternalStorageDirectory() + File.separator + Environment.DIRECTORY_DCIM+ File.separator +"dashipin" + File.separator + System.currentTimeMillis() + ".mp4";
 
     public RecordViewModel(RecordView recordView) {
         this.recordView = recordView;
-//        File outFile=new File(outPuthPath);
-//        if(!outFile.isDirectory())
-//            outFile.mkdirs();
+        File outFile=new File(outPuthPath.substring(0,outPuthPath.lastIndexOf(File.separator)));
+        if(!outFile.isDirectory())
+            outFile.mkdirs();
         recordView.getBinding().setRecordViewOnclick(this);
         aliyunIRecorder = AliyunRecorderCreator.getRecorderInstance(recordView);
 
@@ -60,6 +63,7 @@ public class RecordViewModel extends BaseViewModel implements View.OnClickListen
 
         aliyunIRecorder.setFaceTrackInternalMaxFaceCount(2);
 
+        aliyunIRecorder.setFocusMode(CameraParam.FOCUS_MODE_CONTINUE);
         //设置回调
         aliyunIRecorder.setRecordCallback(new myRecordCallBack());
         aliyunIRecorder.setOnFrameCallback(new myOnFrameCallBack());
@@ -211,6 +215,9 @@ public class RecordViewModel extends BaseViewModel implements View.OnClickListen
         @Override
         public void onFinish(String outputPath) {
             Log.e(TAG, "onFinish: "+outputPath);
+            Intent goVideoPlayer=new Intent(recordView, VideoPlayerView.class);
+            goVideoPlayer.putExtra("outputPath",outputPath);
+            recordView.startActivity(goVideoPlayer);
             recordView.finish();
 
         }
