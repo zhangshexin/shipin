@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#181e25</color>
+    <color name="colorPrimary">#242424</color>
     <color name="colorPrimaryDark">#181e25</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="white">#FFFFFF</color>
+    <color name="white">#ffffff</color>
     <color name="linen">#19FAF0E6</color>
     <color name="black">#000000</color>
+    <color name="bottom_text_color">#bebebe</color>
+    <color name="home_item_name_color">#ffa800</color>
+    <color name="home_item_name_blue">#00ccff</color>
 </resources>

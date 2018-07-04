@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="homeOnclick"
+            type="android.view.View.OnClickListener" />
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="0dp"
+            android:layout_height="73dp"
+            android:orientation="horizontal"
+            android:weightSum="5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0">
+
+            <LinearLayout
+                android:id="@+id/home_bottom_lay_home"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="@{homeOnclick}"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/home_bottom_lay_home_img"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/icon_home_selected" />
+
+                <TextView
+                    android:id="@+id/home_bottom_lay_home_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="首页"
+                    android:textColor="@color/bottom_text_color" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/home_bottom_lay_star"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="@{homeOnclick}"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/home_bottom_lay_star_img"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/icon_star_unselected" />
+
+                <TextView
+                    android:id="@+id/home_bottom_lay_star_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="精选"
+                    android:textColor="@color/bottom_text_color" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/home_bottom_lay_plus"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="@{homeOnclick}"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/home_bottom_lay_plus_img"
+                    android:layout_width="65dp"
+                    android:layout_height="41dp"
+                    android:src="@drawable/icon_plus" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/home_bottom_lay_buycar"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="@{homeOnclick}"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/home_bottom_lay_buycar_img"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/icon_buycar_unselected" />
+
+                <TextView
+                    android:id="@+id/home_bottom_lay_buycar_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="挖矿"
+                    android:textColor="@color/bottom_text_color" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/home_bottom_lay_mine"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="@{homeOnclick}"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/home_bottom_lay_mine_img"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:src="@drawable/icon_mine_unselected" />
+
+                <TextView
+                    android:id="@+id/home_bottom_lay_mine_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="我"
+                    android:textColor="@color/bottom_text_color" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/home_viewPager"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+</layout>
