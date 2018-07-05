@@ -28,6 +28,9 @@ android {
         jni.srcDirs = []
         jniLibs.srcDirs "src/main/jniLibs"
     }
+    dexOptions{
+        jumboMode true
+    }
 }
 
 dependencies {
