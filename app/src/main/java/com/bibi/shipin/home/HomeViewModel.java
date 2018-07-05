@@ -1,11 +1,13 @@
 package com.bibi.shipin.home;
 
+import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.view.MotionEvent;
 import android.view.View;
 
 import com.bibi.shipin.R;
 import com.bibi.shipin.base.BaseViewModel;
+import com.bibi.shipin.home.viewmodel.adapter.HomeListAdapter;
 
 /**
  * Created by zhangshexin on 2018/7/3.
@@ -24,10 +26,20 @@ public class HomeViewModel extends BaseViewModel implements View.OnClickListener
         homeView.getBinding().setHomeOnclick(this);
         setupViewPager(homeView.getBinding().homeViewPager);
         //不左右滑
-        homeView.getBinding().homeViewPager.setOnTouchListener(new View.OnTouchListener() {
+        homeView.getBinding().homeViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                return true;
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                switchCheckStatus(position);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
             }
         });
     }
@@ -67,9 +79,20 @@ public class HomeViewModel extends BaseViewModel implements View.OnClickListener
 
     private void setupViewPager(ViewPager viewPager) {
         BottomAdapter adapter = new BottomAdapter(homeView.getSupportFragmentManager());
-        adapter.addFragment(new FragmentHome());
-        adapter.addFragment(new FragmentStar());
-        adapter.addFragment(new FragmentBuyCar());
+        FragmentHome home= new FragmentHome();
+        Bundle homeBundle=new Bundle();
+        homeBundle.putInt("flag", HomeListAdapter.FLAG_HOME);
+        home.setArguments(homeBundle);
+        adapter.addFragment(home);
+
+        adapter.addFragment(new FragmentBusinessChoice());
+
+        FragmentHome money= new FragmentHome();
+        Bundle moneyBundle=new Bundle();
+        moneyBundle.putInt("flag", HomeListAdapter.FLAG_MONEY);
+        money.setArguments(moneyBundle);
+        adapter.addFragment(money);
+
         adapter.addFragment(new FragmentMine());
         viewPager.setAdapter(adapter);
     }

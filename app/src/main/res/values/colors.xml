@@ -9,4 +9,9 @@
     <color name="bottom_text_color">#bebebe</color>
     <color name="home_item_name_color">#ffa800</color>
     <color name="home_item_name_blue">#00ccff</color>
+    <color name="back_ground">#1b1b1b</color>
+    <color name="mine_business_tag">#bdbdbd</color>
+    <color name="mine_line_1">#bfbfbf</color>
+    <color name="mine_line_2">#d1313131</color>
+    <color name="bottom_bar_bg">#181818</color>
 </resources>

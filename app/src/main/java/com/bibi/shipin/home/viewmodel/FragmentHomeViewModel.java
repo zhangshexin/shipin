@@ -1,8 +1,10 @@
 package com.bibi.shipin.home.viewmodel;
 
+import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
+import android.view.View;
 
 import com.bibi.shipin.R;
 import com.bibi.shipin.base.BaseViewModel;
@@ -21,6 +23,8 @@ public class FragmentHomeViewModel extends BaseViewModel {
     private ArrayList<WorkBean> dataList = new ArrayList<>();
     private HomeListAdapter adapter;
 
+    private int flag;
+
     public FragmentHomeViewModel(FragmentHome fragmentHome) {
         super();
         this.fragmentHome = fragmentHome;
@@ -29,10 +33,18 @@ public class FragmentHomeViewModel extends BaseViewModel {
     @Override
     public void onCreate() {
         super.onCreate();
+        Bundle bundle=fragmentHome.getArguments();
+        if(bundle!=null){
+            flag=bundle.getInt("flag");
+        }
         initView();
     }
 
     private void initView() {
+        if(flag==HomeListAdapter.FLAG_MONEY){//挖矿的要显示搜索框
+            fragmentHome.getBinding().fragmentHomeListSearch.setVisibility(View.VISIBLE);
+            fragmentHome.getBinding().fragmentHomeListSearchIcon.setVisibility(View.VISIBLE);
+        }
         for (int i = 0; i <= 10; i++) {
             WorkBean bean = new WorkBean();
             dataList.add(bean);
@@ -43,7 +55,7 @@ public class FragmentHomeViewModel extends BaseViewModel {
         DividerItemDecoration divider = new DividerItemDecoration(fragmentHome.getContext(),DividerItemDecoration.VERTICAL);
         divider.setDrawable(ContextCompat.getDrawable(fragmentHome.getContext(), R.drawable.drawable_divider_line));
         fragmentHome.getBinding().fragmentHomeList.addItemDecoration(divider);
-        adapter = new HomeListAdapter(fragmentHome);
+        adapter = new HomeListAdapter(fragmentHome,flag);
         adapter.mList.addAll(dataList);
         fragmentHome.getBinding().fragmentHomeList.setAdapter(adapter);
     }

@@ -38,12 +38,12 @@
             android:text="张小自"
             android:textColor="@color/home_item_name_color"
             android:textSize="13sp"
-            app:layout_constraintEnd_toStartOf="@+id/button"
+            app:layout_constraintEnd_toStartOf="@+id/homeListItemBtnAttention"
             app:layout_constraintStart_toEndOf="@+id/home_photo"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/homeListItemBtnAttention"
             android:layout_width="60dp"
             android:layout_height="30dp"
             android:layout_marginEnd="14dp"
@@ -52,11 +52,11 @@
             android:text="关注"
             android:textColor="@color/home_item_name_color"
             android:textSize="12sp"
-            app:layout_constraintEnd_toStartOf="@+id/button2"
+            app:layout_constraintEnd_toStartOf="@+id/homeListItemBtnMoney"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/homeListItemBtnMoney"
             android:layout_width="84dp"
             android:layout_height="30dp"
             android:layout_marginEnd="21dp"
@@ -109,7 +109,7 @@
             app:layout_constraintEnd_toEndOf="@+id/imageView3"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/imageView3"
-            android:src="@drawable/icon_btn_start" />
+            android:src="@drawable/icon_plyer" />
 
         <ImageView
             android:id="@+id/imageView5"

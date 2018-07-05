@@ -10,14 +10,14 @@ import android.view.ViewGroup;
 import com.bibi.shipin.R;
 import com.bibi.shipin.base.BaseFragment;
 import com.bibi.shipin.base.BaseViewModel;
-import com.bibi.shipin.databinding.LayoutFragmentMineBinding;
-import com.bibi.shipin.home.viewmodel.FragmentMineViewModel;
+import com.bibi.shipin.databinding.LayoutFragmentChoicenessListBinding;
+import com.bibi.shipin.home.viewmodel.FragmentBusinessChoiceViewModel;
 
 /**
- * 我的
+ * 挖矿
  */
 
-public class FragmentMine extends BaseFragment<LayoutFragmentMineBinding,FragmentMineViewModel> {
+public class FragmentBusinessChoice extends BaseFragment<LayoutFragmentChoicenessListBinding,FragmentBusinessChoiceViewModel> {
     @Override
     public int onCreateSetView() {
         return 0;
@@ -33,12 +33,9 @@ public class FragmentMine extends BaseFragment<LayoutFragmentMineBinding,Fragmen
 
     }
 
-
-    //---------------
-
     @Override
     public int initContentView() {
-        return R.layout.layout_fragment_mine;
+        return R.layout.layout_fragment_choiceness_list;
     }
 
     @Override
@@ -47,7 +44,7 @@ public class FragmentMine extends BaseFragment<LayoutFragmentMineBinding,Fragmen
     }
 
     @Override
-    public FragmentMineViewModel initViewModel() {
-        return new FragmentMineViewModel(this);
+    public FragmentBusinessChoiceViewModel initViewModel() {
+        return new FragmentBusinessChoiceViewModel(this);
     }
 }
