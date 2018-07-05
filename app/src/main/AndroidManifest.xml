@@ -29,8 +29,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".record.RecordView" android:screenOrientation="portrait"/>
-        <activity android:name=".player.VideoPlayerView" android:screenOrientation="portrait"/>
+        <activity android:name=".record.RecordView" android:screenOrientation="portrait" android:label="录制页"/>
+        <activity android:name=".player.VideoPlayerView" android:screenOrientation="portrait" android:label="播放页"/>
+        <activity android:name=".login.LoginView" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoTitle" android:label="登录页"/>
     </application>
 
 </manifest>

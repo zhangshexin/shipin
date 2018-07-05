@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data></data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary">
+
+        <LinearLayout
+            android:id="@+id/login_lay_name"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="28dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="26dp"
+            android:background="@drawable/drawable_rectangle_grey_2"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="13dp"
+                android:text="帐号:"
+                android:textColor="@color/bottom_text_color"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/login_lay_name_edi"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@null"
+                android:lines="1"
+                android:padding="5dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/login_lay_pwd"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_marginEnd="28dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="13dp"
+            android:background="@drawable/drawable_rectangle_grey_2"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/login_lay_name">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="13dp"
+                android:text="密码:"
+                android:textColor="@color/bottom_text_color"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/login_lay_pwd_edi"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@null"
+                android:lines="1"
+                android:padding="5dp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="忘记密码"
+            android:textColor="@color/bottom_text_color"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="@+id/login_lay_pwd"
+            app:layout_constraintTop_toBottomOf="@+id/login_lay_pwd" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="31dp"
+            android:background="@drawable/drawable_rectangle_grey_2"
+            android:text="登录"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="@+id/login_lay_pwd"
+            app:layout_constraintStart_toStartOf="@+id/login_lay_pwd"
+            app:layout_constraintTop_toBottomOf="@+id/textView6" />
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

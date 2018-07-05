@@ -3,7 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data></data>
+    <data>
+        <variable
+            name="onMineClick"
+            type="android.view.View.OnClickListener"/>
+    </data>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -15,7 +19,8 @@
             android:background="@color/colorPrimary">
 
             <ImageView
-                android:id="@+id/imageView9"
+                android:onClick="@{onMineClick}"
+                android:id="@+id/mine_photo"
                 android:layout_width="47dp"
                 android:layout_height="47dp"
                 android:layout_marginTop="65dp"
@@ -29,8 +34,8 @@
                 android:id="@+id/imageView10"
                 android:layout_width="14dp"
                 android:layout_height="14dp"
-                app:layout_constraintBottom_toBottomOf="@+id/imageView9"
-                app:layout_constraintEnd_toEndOf="@+id/imageView9"
+                app:layout_constraintBottom_toBottomOf="@+id/mine_photo"
+                app:layout_constraintEnd_toEndOf="@+id/mine_photo"
                 app:srcCompat="@drawable/icon_v" />
 
             <TextView
@@ -44,7 +49,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView9" />
+                app:layout_constraintTop_toBottomOf="@+id/mine_photo" />
 
             <TextView
                 android:id="@+id/textView10"

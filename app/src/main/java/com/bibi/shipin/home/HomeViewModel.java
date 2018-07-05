@@ -1,5 +1,6 @@
 package com.bibi.shipin.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.view.MotionEvent;
@@ -8,6 +9,7 @@ import android.view.View;
 import com.bibi.shipin.R;
 import com.bibi.shipin.base.BaseViewModel;
 import com.bibi.shipin.home.viewmodel.adapter.HomeListAdapter;
+import com.bibi.shipin.record.RecordView;
 
 /**
  * Created by zhangshexin on 2018/7/3.
@@ -62,6 +64,10 @@ public class HomeViewModel extends BaseViewModel implements View.OnClickListener
             case R.id.home_bottom_lay_mine:
                 homeView.getBinding().homeViewPager.setCurrentItem(3);
                 switchCheckStatus(3);
+                break;
+            case R.id.home_bottom_lay_plus:
+                //去录制页
+                homeView.startActivity(new Intent(homeView, RecordView.class));
                 break;
         }
     }
