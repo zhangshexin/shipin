@@ -21,8 +21,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".home.HomeView" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoTitle">
+        android:theme="@style/AppTheme.NoTitle">
+        <activity android:name=".home.HomeView" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -31,7 +31,10 @@
         </activity>
         <activity android:name=".record.RecordView" android:screenOrientation="portrait" android:label="录制页"/>
         <activity android:name=".player.VideoPlayerView" android:screenOrientation="portrait" android:label="播放页"/>
-        <activity android:name=".login.LoginView" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoTitle" android:label="登录页"/>
+        <activity android:name=".login.LoginView" android:screenOrientation="portrait" android:label="登录页"/>
+        <activity android:name=".mine.MyCollectionView" android:screenOrientation="portrait" android:label="我的收藏"/>
+        <activity android:name=".mine.MyFansAndAttentionsView" android:screenOrientation="portrait" android:label="我的粉丝/我的关注"/>
+        <activity android:name=".home.SomebodyHomePageView" android:screenOrientation="portrait" android:label="某人的主页"/>
     </application>
 
 </manifest>

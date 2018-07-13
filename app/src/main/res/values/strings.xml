@@ -7,5 +7,8 @@
     <string name="contract">联系我们</string>
     <string name="download">下载</string>
     <string name="make_money">我要投资</string>
+    <string name="submit">订阅</string>
     <string name="money">%1$d币</string>
+    <string name="my_fans">我的粉丝</string>
+    <string name="my_attentions">我的关注</string>
 </resources>

@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#242424</color>
     <color name="colorPrimaryDark">#181e25</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#ff4081</color>
     <color name="white">#ffffff</color>
     <color name="linen">#19FAF0E6</color>
     <color name="black">#000000</color>
@@ -14,4 +14,5 @@
     <color name="mine_line_1">#bfbfbf</color>
     <color name="mine_line_2">#d1313131</color>
     <color name="bottom_bar_bg">#181818</color>
+    <color name="home_separate">#2d2d2d</color>
 </resources>

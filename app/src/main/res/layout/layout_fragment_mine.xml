@@ -102,7 +102,8 @@
                 app:layout_constraintTop_toTopOf="@+id/textView12" />
 
             <TextView
-                android:id="@+id/textView14"
+                android:onClick="@{onMineClick}"
+                android:id="@+id/mine_fans_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="11dp"
@@ -120,22 +121,23 @@
                 android:text="作品"
                 android:textColor="@color/white"
                 android:textSize="17sp"
-                app:layout_constraintBottom_toBottomOf="@+id/textView14"
+                app:layout_constraintBottom_toBottomOf="@+id/mine_fans_btn"
                 app:layout_constraintEnd_toEndOf="@+id/textView11"
                 app:layout_constraintStart_toStartOf="@+id/textView11"
-                app:layout_constraintTop_toTopOf="@+id/textView14" />
+                app:layout_constraintTop_toTopOf="@+id/mine_fans_btn" />
 
             <TextView
-                android:id="@+id/textView16"
+                android:onClick="@{onMineClick}"
+                android:id="@+id/mine_attentions_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="关注"
                 android:textColor="@color/white"
                 android:textSize="17sp"
-                app:layout_constraintBottom_toBottomOf="@+id/textView14"
+                app:layout_constraintBottom_toBottomOf="@+id/mine_fans_btn"
                 app:layout_constraintEnd_toEndOf="@+id/textView13"
                 app:layout_constraintStart_toStartOf="@+id/textView13"
-                app:layout_constraintTop_toTopOf="@+id/textView14" />
+                app:layout_constraintTop_toTopOf="@+id/mine_fans_btn" />
 
             <View
                 android:id="@+id/textView17"
@@ -147,10 +149,11 @@
                 android:background="@color/mine_line_1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView14" />
+                app:layout_constraintTop_toBottomOf="@+id/mine_fans_btn" />
 
             <TextView
-                android:id="@+id/textView18"
+                android:onClick="@{onMineClick}"
+                android:id="@+id/mine_btn_attention"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="54dp"
@@ -171,17 +174,18 @@
                 android:background="@color/mine_line_2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView18" />
+                app:layout_constraintTop_toBottomOf="@+id/mine_btn_attention" />
 
             <TextView
-                android:id="@+id/textView20"
+                android:onClick="@{onMineClick}"
+                android:id="@+id/mine_my_wallet"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="18dp"
                 android:text="我的钱包"
                 android:textColor="@color/white"
                 android:textSize="17sp"
-                app:layout_constraintStart_toStartOf="@+id/textView18"
+                app:layout_constraintStart_toStartOf="@+id/mine_btn_attention"
                 app:layout_constraintTop_toBottomOf="@+id/textView19" />
 
 
@@ -195,17 +199,18 @@
                 android:background="@color/mine_line_2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView20" />
+                app:layout_constraintTop_toBottomOf="@+id/mine_my_wallet" />
 
             <TextView
-                android:id="@+id/textView22"
+                android:onClick="@{onMineClick}"
+                android:id="@+id/mine_my_project"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="18dp"
                 android:text="我的项目"
                 android:textColor="@color/white"
                 android:textSize="17sp"
-                app:layout_constraintStart_toStartOf="@+id/textView20"
+                app:layout_constraintStart_toStartOf="@+id/mine_my_wallet"
                 app:layout_constraintTop_toBottomOf="@+id/textView21" />
 
 
@@ -219,17 +224,18 @@
                 android:background="@color/mine_line_2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView22" />
+                app:layout_constraintTop_toBottomOf="@+id/mine_my_project" />
 
             <TextView
-                android:id="@+id/textView24"
+                android:onClick="@{onMineClick}"
+                android:id="@+id/mine_super_serve"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="18dp"
                 android:text="服务定制"
                 android:textColor="@color/white"
                 android:textSize="17sp"
-                app:layout_constraintStart_toStartOf="@+id/textView22"
+                app:layout_constraintStart_toStartOf="@+id/mine_my_project"
                 app:layout_constraintTop_toBottomOf="@+id/textView23" />
 
 
@@ -243,9 +249,10 @@
                 android:background="@color/mine_line_2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView24" />
+                app:layout_constraintTop_toBottomOf="@+id/mine_super_serve" />
 
             <TextView
+                android:onClick="@{onMineClick}"
                 android:id="@+id/textView26"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -253,7 +260,7 @@
                 android:text="联系我们"
                 android:textColor="@color/white"
                 android:textSize="17sp"
-                app:layout_constraintStart_toStartOf="@+id/textView24"
+                app:layout_constraintStart_toStartOf="@+id/mine_super_serve"
                 app:layout_constraintTop_toBottomOf="@+id/textView25" />
 
 
@@ -270,7 +277,8 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView26" />
 
             <TextView
-                android:id="@+id/textView28"
+                android:onClick="@{onMineClick}"
+                android:id="@+id/mine_contact_us"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="18dp"
@@ -291,10 +299,11 @@
                 android:background="@color/mine_line_2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView28" />
+                app:layout_constraintTop_toBottomOf="@+id/mine_contact_us" />
 
             <TextView
-                android:id="@+id/textView30"
+                android:onClick="@{onMineClick}"
+                android:id="@+id/mine_setting"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
@@ -303,7 +312,7 @@
                 android:textColor="@color/white"
                 android:textSize="17sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/textView28"
+                app:layout_constraintStart_toStartOf="@+id/mine_contact_us"
                 app:layout_constraintTop_toBottomOf="@+id/textView29" />
         </android.support.constraint.ConstraintLayout>
     </ScrollView>

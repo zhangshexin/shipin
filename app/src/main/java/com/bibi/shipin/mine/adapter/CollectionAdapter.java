@@ -1,4 +1,4 @@
-package com.bibi.shipin.home.business.adapter;
+package com.bibi.shipin.mine.adapter;
 
 import android.databinding.DataBindingUtil;
 import android.view.ViewGroup;
@@ -8,29 +8,25 @@ import com.bibi.shipin.base.BaseAdapter;
 import com.bibi.shipin.base.BaseViewHolder;
 import com.bibi.shipin.databinding.LayoutFragmentBusinessItemBinding;
 import com.bibi.shipin.home.beans.WorkBean;
-import com.bibi.shipin.home.business.FragmentBusiness;
+import com.bibi.shipin.mine.MyCollectionView;
 
 /**
- * Created by zhangshexin on 2018/7/4.
+ * Created by zhangshexin on 2018/7/12.
  */
 
-public class BusinessListAdapter extends BaseAdapter<WorkBean, BaseViewHolder> {
-
+public class CollectionAdapter extends BaseAdapter<WorkBean, BaseViewHolder> {
 
     /**
-     * 新知
+     * 我的收藏
      */
-    public static final int TAG_NEW = 1;
-    /**
-     * 商业
-     */
-    public static final int TAG_BUSINESS = 2;
+    public static final int TAG_MY_ATTENTION = 0;
 
-    private FragmentBusiness fragmentHome;
+
+    private MyCollectionView fragmentHome;
     private int tag;
 
-    public BusinessListAdapter(FragmentBusiness context, int tag) {
-        super(context.getContext());
+    public CollectionAdapter(MyCollectionView context, int tag) {
+        super(context);
         this.fragmentHome = context;
         this.tag = tag;
     }
@@ -45,11 +41,9 @@ public class BusinessListAdapter extends BaseAdapter<WorkBean, BaseViewHolder> {
     public void onBindVH(BaseViewHolder baseViewHolder, int position) {
         LayoutFragmentBusinessItemBinding binding = (LayoutFragmentBusinessItemBinding) baseViewHolder.getBinding();
         switch (tag) {
-            case TAG_BUSINESS:
-                binding.fragmentChoicenessItemLabelRight.setText(R.string.contract);
-                break;
-            case TAG_NEW:
-                binding.fragmentChoicenessItemLabelRight.setText(R.string.download);
+            case TAG_MY_ATTENTION:
+                binding.fragmentChoicenessItemLabelLeft.setText(R.string.collection);
+                binding.fragmentChoicenessItemLabelRight.setText(R.string.submit);
                 break;
         }
     }

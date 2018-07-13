@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="someBodyOnclick"
+            type="android.view.View.OnClickListener"/>
+    </data>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        android:id="@+id/somebody_parent_scrollview">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imageView12"
+                    android:layout_width="47dp"
+                    android:layout_height="47dp"
+                    android:layout_marginTop="54dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:src="@drawable/icon_photo" />
+
+                <ImageView
+                    android:id="@+id/imageView13"
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView12"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView12"
+                    android:src="@drawable/icon_v" />
+
+                <TextView
+                    android:id="@+id/textView20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="14dp"
+                    android:text="DIGULASIZHAOSI"
+                    android:textColor="@color/home_item_name_color"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView12" />
+
+                <TextView
+                    android:id="@+id/textView22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="5dp"
+                    android:text="xxx企业创始人"
+                    android:textColor="@color/bottom_text_color"
+                    android:textSize="10sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textView20" />
+
+                <TextView
+                    android:id="@+id/somebody_work_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="69dp"
+                    android:layout_marginTop="30dp"
+                    android:text="13"
+                    android:textColor="@color/white"
+                    android:textSize="17sp"
+                    app:layout_constraintRight_toLeftOf="@+id/somebody_fans_count"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView22" />
+
+                <TextView
+                    android:id="@+id/somebody_work_count_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="11dp"
+                    android:text="作品"
+                    android:textColor="@color/white"
+                    android:textSize="17sp"
+                    app:layout_constraintEnd_toEndOf="@+id/somebody_work_count"
+                    app:layout_constraintRight_toLeftOf="@+id/somebody_fans_count_label"
+                    app:layout_constraintStart_toStartOf="@+id/somebody_work_count"
+                    app:layout_constraintTop_toBottomOf="@+id/somebody_work_count" />
+
+                <TextView
+                    android:id="@+id/somebody_fans_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="13"
+                    android:textColor="@color/white"
+                    android:textSize="17sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView22" />
+
+                <TextView
+                    android:id="@+id/somebody_fans_count_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="11dp"
+                    android:text="粉丝"
+                    android:textColor="@color/white"
+                    android:textSize="17sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/somebody_fans_count" />
+
+                <TextView
+                    android:id="@+id/somebody_attention_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="67dp"
+                    android:layout_marginTop="30dp"
+                    android:text="13"
+                    android:textColor="@color/white"
+                    android:textSize="17sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintLeft_toRightOf="@+id/somebody_fans_count"
+                    app:layout_constraintTop_toBottomOf="@+id/textView22" />
+
+                <TextView
+                    android:id="@+id/somebody_work_attention_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="11dp"
+                    android:text="关注"
+                    android:textColor="@color/white"
+                    android:textSize="17sp"
+                    app:layout_constraintEnd_toEndOf="@+id/somebody_attention_count"
+                    app:layout_constraintLeft_toRightOf="@+id/somebody_fans_count_label"
+                    app:layout_constraintStart_toStartOf="@+id/somebody_attention_count"
+                    app:layout_constraintTop_toBottomOf="@+id/somebody_attention_count" />
+
+                <View
+                    android:id="@+id/somebody_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="30dp"
+                    android:background="#6d6d6d"
+                    app:layout_constraintTop_toBottomOf="@+id/somebody_fans_count_label" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/somebody_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/somebody_line" />
+
+                <ImageView
+                    android:onClick="@{someBodyOnclick}"
+                    android:id="@+id/somebody_back_btn"
+                    android:layout_width="30dp"
+                    android:layout_height="44dp"
+                    android:padding="12dp"
+                    android:src="@drawable/icon_back"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ProgressBar
+                    android:id="@+id/somebody_loading_progress"
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/somebody_line" />
+            </android.support.constraint.ConstraintLayout>
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+</layout>

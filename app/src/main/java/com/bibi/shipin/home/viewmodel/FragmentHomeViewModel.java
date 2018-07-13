@@ -16,6 +16,7 @@ import java.util.ArrayList;
 
 /**
  * Created by zhangshexin on 2018/7/3.
+ * 首页/创业领袖/挖矿 --共用页
  */
 
 public class FragmentHomeViewModel extends BaseViewModel {

@@ -47,7 +47,7 @@ public class FragmentBusinessViewModel extends BaseViewModel {
 
         fragmentBusiness.getBinding().fragmentListView.setLayoutManager(new LinearLayoutManager(fragmentBusiness.getContext(), LinearLayoutManager.VERTICAL, false));
 
-        adapter = new BusinessListAdapter(fragmentBusiness, isNew);
+        adapter = new BusinessListAdapter(fragmentBusiness,isNew? BusinessListAdapter.TAG_NEW:BusinessListAdapter.TAG_BUSINESS);
         adapter.mList.addAll(dataList);
         fragmentBusiness.getBinding().fragmentListView.setAdapter(adapter);
     }

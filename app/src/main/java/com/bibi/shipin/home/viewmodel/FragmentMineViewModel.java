@@ -7,6 +7,10 @@ import com.bibi.shipin.R;
 import com.bibi.shipin.base.BaseViewModel;
 import com.bibi.shipin.home.FragmentMine;
 import com.bibi.shipin.login.LoginView;
+import com.bibi.shipin.mine.MyCollectionView;
+import com.bibi.shipin.mine.MyFansAndAttentionsView;
+import com.bibi.shipin.mine.adapter.MyFansAndAttentionsAdapter;
+import com.bibi.shipin.mine.viewmodel.MyFansAndAttentionsViewModel;
 
 /**
  * Created by zhangshexin on 2018/7/4.
@@ -32,7 +36,32 @@ public class FragmentMineViewModel extends BaseViewModel implements View.OnClick
             case R.id.mine_photo:
                 goLogin();
                 break;
+            case R.id.mine_btn_attention:
+                goAttention();
+                break;
+            case R.id.mine_fans_btn:
+                goFansAttentions(1);
+                break;
+            case R.id.mine_attentions_btn:
+                goFansAttentions(2);
+                break;
         }
+    }
+
+    private void goFansAttentions(int tag) {
+        int ext;
+        if(tag==1)
+            ext= MyFansAndAttentionsAdapter.TAG_FANS;
+        else
+            ext=MyFansAndAttentionsAdapter.TAG_ATTENTIONS;
+        Intent fans=new Intent(fragmentMine.getContext(), MyFansAndAttentionsView.class);
+        fans.putExtra(MyFansAndAttentionsViewModel.TAG,ext);
+        fragmentMine.startActivity(fans);
+
+    }
+
+    private void goAttention() {
+        fragmentMine.startActivity(new Intent(fragmentMine.getContext(), MyCollectionView.class));
     }
 
     private void goLogin() {
