@@ -11,4 +11,6 @@
     <string name="money">%1$d币</string>
     <string name="my_fans">我的粉丝</string>
     <string name="my_attentions">我的关注</string>
+    <string name="cancel">取消</string>
+    <string name="comment_count">%1$d条评论</string>
 </resources>

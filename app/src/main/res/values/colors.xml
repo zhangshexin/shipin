@@ -15,4 +15,7 @@
     <color name="mine_line_2">#d1313131</color>
     <color name="bottom_bar_bg">#181818</color>
     <color name="home_separate">#2d2d2d</color>
+    <color name="share_cancel_101010">#101010</color>
+    <color name="share_primary_1a1a1a">#1a1a1a</color>
+    <color name="comment_name_787878">#787878</color>
 </resources>

@@ -10,6 +10,8 @@ import com.bibi.shipin.base.BaseAdapter;
 import com.bibi.shipin.base.BaseViewHolder;
 import com.bibi.shipin.databinding.LayoutFragmentHomeListItemBinding;
 import com.bibi.shipin.home.FragmentHome;
+import com.bibi.shipin.home.HomeView;
+import com.bibi.shipin.home.HomeViewModel;
 import com.bibi.shipin.home.SomebodyHomePageView;
 import com.bibi.shipin.home.beans.WorkBean;
 
@@ -34,10 +36,13 @@ public class HomeListAdapter extends BaseAdapter<WorkBean, BaseViewHolder> imple
     public static final int FLAG_HOME = 2;
     private int flag = FLAG_CREATE;
 
+    private HomeViewModel vm;
+
     public HomeListAdapter(FragmentHome context, int flag) {
         super(context.getContext());
         this.fragmentHome = context;
         this.flag = flag;
+        vm=((HomeView)context.getActivity()).getVm();
     }
 
     @Override
@@ -68,6 +73,17 @@ public class HomeListAdapter extends BaseAdapter<WorkBean, BaseViewHolder> imple
         switch (v.getId()){
             case R.id.home_photo:
                 goSomeBodyHomePage();
+                break;
+            case R.id.home_list_item_icon_comment:
+                //弹出评论
+                vm.toggleCommentList(true,null);
+                break;
+            case R.id.home_list_item_icon_dianzan:
+                //点赞
+                break;
+            case R.id.home_list_item_icon_share:
+                //分享
+                vm.toggleShare(true,null);
                 break;
         }
     }

@@ -33,4 +33,8 @@ public class BaseViewModel implements IBaseViewModel {
     public void onAttachFragment() {
 
     }
+
+    public void onBackPress(){
+
+    }
 }

@@ -15,9 +15,15 @@ public class HomeView extends BaseView<LayouyHomeBinding,HomeViewModel> {
     public int onCreateSetView() {
         return R.layout.layouy_home;
     }
-
+    private HomeViewModel model;
     @Override
     public HomeViewModel onCreateSetViewModel() {
-        return new HomeViewModel(this);
+        return model  =new HomeViewModel(this);
+    }
+
+    @Override
+    public void onBackPressed() {
+        model.onBackPress();
+//        super.onBackPressed();
     }
 }

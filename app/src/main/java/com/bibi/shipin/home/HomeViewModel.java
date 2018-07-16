@@ -3,13 +3,20 @@ package com.bibi.shipin.home;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.view.MotionEvent;
 import android.view.View;
 
 import com.bibi.shipin.R;
 import com.bibi.shipin.base.BaseViewModel;
+import com.bibi.shipin.home.beans.WorkBean;
+import com.bibi.shipin.home.viewmodel.adapter.CommentAdapter;
 import com.bibi.shipin.home.viewmodel.adapter.HomeListAdapter;
 import com.bibi.shipin.record.RecordView;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 /**
  * Created by zhangshexin on 2018/7/3.
@@ -44,6 +51,20 @@ public class HomeViewModel extends BaseViewModel implements View.OnClickListener
 
             }
         });
+    }
+
+
+    @Override
+    public void onBackPress() {
+        if(homeView.getBinding().homeIncludeComment.includeComment.getVisibility()==View.VISIBLE){
+            toggleCommentList(false,null);
+            return;
+        }
+        if(homeView.getBinding().homeIncludeShare.includeShare.getVisibility()==View.VISIBLE){
+            toggleShare(false,null);
+            return;
+        }
+        homeView.finish();
     }
 
     @Override
@@ -81,6 +102,46 @@ public class HomeViewModel extends BaseViewModel implements View.OnClickListener
         homeView.getBinding().homeBottomLayStarImg.setImageResource(position==1?R.drawable.icon_star_selected:R.drawable.icon_star_unselected);
         homeView.getBinding().homeBottomLayBuycarImg.setImageResource(position==2?R.drawable.icon_buycar_selected:R.drawable.icon_buycar_unselected);
         homeView.getBinding().homeBottomLayMineImg.setImageResource(position==3?R.drawable.icon_mine_selected:R.drawable.icon_mine_unselected);
+    }
+
+    /**
+     * 显示分享页面
+     * @param show
+     * @param shareContent
+     */
+    public void toggleShare(boolean show,String shareContent){
+        homeView.getBinding().homeIncludeShare.includeShare.setVisibility(show?View.VISIBLE:View.GONE);
+        homeView.getBinding().homeIncludeComment.includeComment.setVisibility(View.GONE);
+    }
+
+
+    private  CommentAdapter commentAdapter;
+    /**
+     *
+     * @param show
+     * @param url
+     */
+    public void toggleCommentList(boolean show,String url){
+        if(show&&homeView.getBinding().homeIncludeComment.includeComment.getVisibility()==View.VISIBLE)
+            return;
+        homeView.getBinding().homeIncludeShare.includeShare.setVisibility(View.GONE);
+        homeView.getBinding().homeIncludeComment.includeComment.setVisibility(show?View.VISIBLE:View.GONE);
+
+        if(commentAdapter!=null){
+            return;
+        }
+        //模似一下数据
+        List comments= new ArrayList();
+        for (int i=0;i<10;i++){
+            WorkBean bean=new WorkBean();
+            comments.add(bean);
+        }
+        LinearLayoutManager manager=new LinearLayoutManager(homeView,LinearLayoutManager.VERTICAL,false);
+        commentAdapter=new CommentAdapter(homeView);
+        commentAdapter.mList.addAll(comments);
+        homeView.getBinding().homeIncludeComment.includeCommentList.setLayoutManager(manager);
+        homeView.getBinding().homeIncludeComment.includeCommentList.setAdapter(commentAdapter);
+
     }
 
     private void setupViewPager(ViewPager viewPager) {
