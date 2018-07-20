@@ -10,6 +10,15 @@
         android:layout_height="match_parent"
         android:background="@color/colorPrimary">
 
+        <ImageView
+            android:id="@+id/back_btn"
+            android:layout_width="30dp"
+            android:layout_height="44dp"
+            android:padding="12dp"
+            android:src="@drawable/icon_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <LinearLayout
             android:id="@+id/login_lay_name"
             android:layout_width="0dp"
@@ -22,7 +31,7 @@
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@+id/back_btn">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -97,6 +106,145 @@
             app:layout_constraintEnd_toEndOf="@+id/login_lay_pwd"
             app:layout_constraintStart_toStartOf="@+id/login_lay_pwd"
             app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+
+        <!--快速登录-->
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button"
+            app:layout_constraintVertical_bias="1.0"
+            tools:layout_editor_absoluteX="0dp">
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="111dp"
+                android:layout_height="1dp"
+                android:layout_marginEnd="19dp"
+                android:background="@color/line_7d7d7d"
+                app:layout_constraintBottom_toBottomOf="@+id/textView3"
+                app:layout_constraintEnd_toStartOf="@+id/textView3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView3" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="272dp"
+                android:layout_marginTop="8dp"
+                android:text="快速登录"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+
+                app:layout_constraintVertical_bias="0.851" />
+
+            <View
+                android:layout_width="111dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="19dp"
+                android:background="@color/line_7d7d7d"
+                app:layout_constraintBottom_toBottomOf="@+id/textView3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView3"
+                app:layout_constraintTop_toTopOf="@+id/textView3" />
+
+            <ImageView
+                android:id="@+id/login_btn_mobile"
+                android:layout_width="58dp"
+                android:layout_height="58dp"
+                android:layout_marginEnd="55dp"
+                android:src="@drawable/icon_login_mobile"
+                app:layout_constraintBottom_toBottomOf="@+id/login_btn_wechat"
+                app:layout_constraintEnd_toStartOf="@+id/login_btn_wechat"
+                app:layout_constraintTop_toTopOf="@+id/login_btn_wechat" />
+
+            <ImageView
+                android:id="@+id/login_btn_wechat"
+                android:layout_width="58dp"
+                android:layout_height="58dp"
+                android:layout_marginTop="44dp"
+                android:src="@drawable/icon_login_wechat"
+                app:layout_constraintEnd_toEndOf="@+id/textView3"
+                app:layout_constraintStart_toStartOf="@+id/textView3"
+                app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+            <ImageView
+                android:id="@+id/login_btn_qq"
+                android:layout_width="58dp"
+                android:layout_height="58dp"
+                android:layout_marginLeft="55dp"
+                android:src="@drawable/icon_login_qq"
+                app:layout_constraintBottom_toBottomOf="@+id/login_btn_wechat"
+                app:layout_constraintStart_toEndOf="@+id/login_btn_wechat"
+                app:layout_constraintTop_toTopOf="@+id/login_btn_wechat" />
+
+            <TextView
+                android:id="@+id/login_text_wechat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:text="微信登录"
+                android:textColor="@color/bottom_text_color"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="@+id/login_btn_wechat"
+                app:layout_constraintStart_toStartOf="@+id/login_btn_wechat"
+                app:layout_constraintTop_toBottomOf="@+id/login_btn_wechat" />
+
+            <TextView
+                android:id="@+id/login_text_mobile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:text="手机登录"
+                android:textColor="@color/bottom_text_color"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="@+id/login_btn_mobile"
+                app:layout_constraintStart_toStartOf="@+id/login_btn_mobile"
+                app:layout_constraintTop_toBottomOf="@+id/login_btn_mobile" />
+
+            <TextView
+                android:id="@+id/login_text_qq"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:text="QQ登录"
+                android:textColor="@color/bottom_text_color"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="@+id/login_btn_qq"
+                app:layout_constraintStart_toStartOf="@+id/login_btn_qq"
+                app:layout_constraintTop_toBottomOf="@+id/login_btn_qq" />
+
+            <ImageView
+                android:id="@+id/login_btn_weibo"
+                android:layout_width="58dp"
+                android:layout_height="58dp"
+                android:layout_marginTop="35dp"
+                android:src="@drawable/icon_login_weibo"
+                app:layout_constraintEnd_toEndOf="@+id/login_btn_mobile"
+                app:layout_constraintStart_toStartOf="@+id/login_btn_mobile"
+                app:layout_constraintTop_toBottomOf="@+id/login_text_wechat" />
+
+            <TextView
+                android:id="@+id/login_text_weibo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="38dp"
+                android:layout_marginTop="7dp"
+                android:text="微博登录"
+                android:textColor="@color/bottom_text_color"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/login_btn_weibo"
+                app:layout_constraintStart_toStartOf="@+id/login_btn_weibo"
+                app:layout_constraintTop_toBottomOf="@+id/login_btn_weibo" />
+        </android.support.constraint.ConstraintLayout>
     </android.support.constraint.ConstraintLayout>
 
 </layout>

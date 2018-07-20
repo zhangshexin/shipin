@@ -6,6 +6,7 @@ import android.view.View;
 import com.bibi.shipin.R;
 import com.bibi.shipin.base.BaseViewModel;
 import com.bibi.shipin.home.FragmentMine;
+import com.bibi.shipin.login.LoginChoiceView;
 import com.bibi.shipin.login.LoginView;
 import com.bibi.shipin.mine.MyCollectionView;
 import com.bibi.shipin.mine.MyFansAndAttentionsView;
@@ -16,12 +17,13 @@ import com.bibi.shipin.mine.viewmodel.MyFansAndAttentionsViewModel;
  * Created by zhangshexin on 2018/7/4.
  */
 
-public class FragmentMineViewModel extends BaseViewModel implements View.OnClickListener{
+public class FragmentMineViewModel extends BaseViewModel implements View.OnClickListener {
 
     private FragmentMine fragmentMine;
+
     public FragmentMineViewModel(FragmentMine fragmentMine) {
         super();
-        this.fragmentMine=fragmentMine;
+        this.fragmentMine = fragmentMine;
     }
 
     @Override
@@ -32,7 +34,7 @@ public class FragmentMineViewModel extends BaseViewModel implements View.OnClick
 
     @Override
     public void onClick(View v) {
-        switch(v.getId()){
+        switch (v.getId()) {
             case R.id.mine_photo:
                 goLogin();
                 break;
@@ -50,12 +52,12 @@ public class FragmentMineViewModel extends BaseViewModel implements View.OnClick
 
     private void goFansAttentions(int tag) {
         int ext;
-        if(tag==1)
-            ext= MyFansAndAttentionsAdapter.TAG_FANS;
+        if (tag == 1)
+            ext = MyFansAndAttentionsAdapter.TAG_FANS;
         else
-            ext=MyFansAndAttentionsAdapter.TAG_ATTENTIONS;
-        Intent fans=new Intent(fragmentMine.getContext(), MyFansAndAttentionsView.class);
-        fans.putExtra(MyFansAndAttentionsViewModel.TAG,ext);
+            ext = MyFansAndAttentionsAdapter.TAG_ATTENTIONS;
+        Intent fans = new Intent(fragmentMine.getContext(), MyFansAndAttentionsView.class);
+        fans.putExtra(MyFansAndAttentionsViewModel.TAG, ext);
         fragmentMine.startActivity(fans);
 
     }
@@ -65,6 +67,6 @@ public class FragmentMineViewModel extends BaseViewModel implements View.OnClick
     }
 
     private void goLogin() {
-        fragmentMine.startActivity(new Intent(fragmentMine.getContext(), LoginView.class));
+        fragmentMine.startActivity(new Intent(fragmentMine.getContext(), LoginChoiceView.class));
     }
 }
