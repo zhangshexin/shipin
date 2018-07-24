@@ -1,0 +1,722 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="settingSecondPageOnClick"
+            type="android.view.View.OnClickListener"/>
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary">
+        <!--标题栏-->
+        <TextView
+            android:id="@+id/setting_second_text_title"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:background="@color/bottom_bar_bg"
+            android:gravity="center"
+            android:text="通用设置"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:onClick="@{settingSecondPageOnClick}"
+            android:id="@+id/back_btn"
+            android:layout_width="30dp"
+            android:layout_height="44dp"
+            android:padding="12dp"
+            android:src="@drawable/icon_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <!--【设置】二级页分类处理-->
+        <!--########账号设置########-->
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/setting_second_account"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/setting_second_text_title">
+
+            <TextView
+                android:id="@+id/setting_second_label_name"
+                android:layout_width="0dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="11dp"
+                android:background="@color/bottom_bar_bg"
+                android:gravity="left|center_vertical"
+                android:paddingLeft="18dp"
+                android:text="账号昵称"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/setting_second_account" />
+
+            <EditText
+                android:id="@+id/setting_second_edi_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="13sp"
+                android:layout_marginStart="90dp"
+                android:gravity="center_vertical"
+                android:text="三毛立行"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="@+id/setting_second_label_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/setting_second_label_name" />
+            <!--#########个人信息########-->
+            <TextView
+                android:onClick="@{settingSecondPageOnClick}"
+                android:id="@+id/setting_second_label_info"
+                android:layout_width="0dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="11dp"
+                android:background="@color/bottom_bar_bg"
+                android:gravity="center_vertical|left"
+                android:paddingLeft="15dp"
+                android:text="个人信息"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/setting_second_label_name" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="16dp"
+                android:layout_marginEnd="9dp"
+                app:layout_constraintBottom_toBottomOf="@+id/setting_second_label_info"
+                app:layout_constraintEnd_toEndOf="@+id/setting_second_label_info"
+                app:layout_constraintTop_toTopOf="@+id/setting_second_label_info"
+                app:srcCompat="@drawable/icon_arrow_right" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/line_313131"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/setting_second_label_info" />
+            <!--#########修改密码########-->
+            <TextView
+                android:onClick="@{settingSecondPageOnClick}"
+                android:id="@+id/setting_second_label_modify"
+                android:layout_width="0dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="1dp"
+                android:background="@color/bottom_bar_bg"
+                android:gravity="center_vertical|left"
+                android:paddingLeft="15dp"
+                android:text="修改密码"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/setting_second_label_info" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="16dp"
+                android:layout_marginEnd="9dp"
+                app:layout_constraintBottom_toBottomOf="@+id/setting_second_label_modify"
+                app:layout_constraintEnd_toEndOf="@+id/setting_second_label_modify"
+                app:layout_constraintTop_toTopOf="@+id/setting_second_label_modify"
+                app:srcCompat="@drawable/icon_arrow_right" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/line_313131"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/setting_second_label_modify" />
+            <!--#########登录记录########-->
+            <TextView
+                android:onClick="@{settingSecondPageOnClick}"
+                android:id="@+id/setting_second_label_logo"
+                android:layout_width="0dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="1dp"
+                android:background="@color/bottom_bar_bg"
+                android:gravity="center_vertical|left"
+                android:paddingLeft="15dp"
+                android:text="登录记录"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/setting_second_label_modify" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="16dp"
+                android:layout_marginEnd="9dp"
+                app:layout_constraintBottom_toBottomOf="@+id/setting_second_label_logo"
+                app:layout_constraintEnd_toEndOf="@+id/setting_second_label_logo"
+                app:layout_constraintTop_toTopOf="@+id/setting_second_label_logo"
+                app:srcCompat="@drawable/icon_arrow_right" />
+        </android.support.constraint.ConstraintLayout>
+
+        <!--########账号安全########-->
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/setting_second_account_security"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/setting_second_text_title">
+            <!--微信-->
+            <TextView
+                android:onClick="@{settingSecondPageOnClick}"
+                android:id="@+id/setting_second_label_wechat"
+                android:layout_width="0dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="11dp"
+                android:background="@color/bottom_bar_bg"
+                android:gravity="center_vertical|left"
+                android:paddingLeft="15dp"
+                android:text="微信"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/setting_second_statue_label_wechat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="18dp"
+                android:text="已绑定"
+                android:textColor="@color/bottom_text_color"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="@+id/setting_second_label_wechat"
+                app:layout_constraintEnd_toEndOf="@+id/setting_second_label_wechat"
+                app:layout_constraintTop_toTopOf="@+id/setting_second_label_wechat" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/line_313131"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/setting_second_label_wechat" />
+            <!--QQ-->
+            <TextView
+                android:onClick="@{settingSecondPageOnClick}"
+                android:id="@+id/setting_second_label_qq"
+                android:layout_width="0dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="1dp"
+                android:background="@color/bottom_bar_bg"
+                android:gravity="center_vertical|left"
+                android:paddingLeft="15dp"
+                android:text="QQ"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/setting_second_label_wechat" />
+
+            <TextView
+                android:id="@+id/setting_second_statue_label_qq"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="18dp"
+                android:text="已绑定"
+                android:textColor="@color/bottom_text_color"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="@+id/setting_second_label_qq"
+                app:layout_constraintEnd_toEndOf="@+id/setting_second_label_qq"
+                app:layout_constraintTop_toTopOf="@+id/setting_second_label_qq" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/line_313131"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/setting_second_label_qq" />
+            <!--新浪微博-->
+            <TextView
+                android:onClick="@{settingSecondPageOnClick}"
+                android:id="@+id/setting_second_label_weibo"
+                android:layout_width="0dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="1dp"
+                android:background="@color/bottom_bar_bg"
+                android:gravity="center_vertical|left"
+                android:paddingLeft="15dp"
+                android:text="新浪微博"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/setting_second_label_qq" />
+
+            <TextView
+                android:id="@+id/setting_second_statue_label_weibo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="18dp"
+                android:text="已绑定"
+                android:textColor="@color/bottom_text_color"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="@+id/setting_second_label_weibo"
+                app:layout_constraintEnd_toEndOf="@+id/setting_second_label_weibo"
+                app:layout_constraintTop_toTopOf="@+id/setting_second_label_weibo" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/line_313131"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/setting_second_label_weibo" />
+            <!--手机号-->
+            <TextView
+                android:onClick="@{settingSecondPageOnClick}"
+                android:id="@+id/setting_second_label_mobile"
+                android:layout_width="0dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="1dp"
+                android:background="@color/bottom_bar_bg"
+                android:gravity="center_vertical|left"
+                android:paddingLeft="15dp"
+                android:text="手机号"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/setting_second_label_weibo" />
+
+            <TextView
+                android:id="@+id/setting_second_statue_label_mobile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="18dp"
+                android:text="已绑定"
+                android:textColor="@color/bottom_text_color"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="@+id/setting_second_label_mobile"
+                app:layout_constraintEnd_toEndOf="@+id/setting_second_label_mobile"
+                app:layout_constraintTop_toTopOf="@+id/setting_second_label_mobile" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/line_313131"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/setting_second_label_mobile" />
+        </android.support.constraint.ConstraintLayout>
+        <!--########消息设置########-->
+        <android.support.constraint.ConstraintLayout
+            android:visibility="gone"
+            android:id="@+id/setting_second_message"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/setting_second_text_title">
+            <TextView
+                android:onClick="@{settingSecondPageOnClick}"
+                android:id="@+id/setting_second_label_message_toggle"
+                android:layout_width="0dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="11dp"
+                android:background="@color/bottom_bar_bg"
+                android:gravity="center_vertical|left"
+                android:paddingLeft="15dp"
+                android:text="接收推送通知"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/setting_second_message_statue_label_toggle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="18dp"
+                android:text="已开启"
+                android:textColor="@color/bottom_text_color"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="@+id/setting_second_label_message_toggle"
+                app:layout_constraintEnd_toEndOf="@+id/setting_second_label_message_toggle"
+                app:layout_constraintTop_toTopOf="@+id/setting_second_label_message_toggle" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/line_313131"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/setting_second_label_message_toggle" />
+
+
+            <TextView
+                android:onClick="@{settingSecondPageOnClick}"
+                android:id="@+id/setting_second_label_message_atme"
+                android:layout_width="0dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="11dp"
+                android:background="@color/bottom_bar_bg"
+                android:gravity="center_vertical|left"
+                android:paddingLeft="15dp"
+                android:text="\@我的"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/setting_second_label_message_toggle" />
+
+            <TextView
+                android:id="@+id/setting_second_message_statue_label_atme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="38dp"
+                android:text="所有人"
+                android:textColor="@color/bottom_text_color"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="@+id/setting_second_label_message_atme"
+                app:layout_constraintEnd_toEndOf="@+id/setting_second_label_message_atme"
+                app:layout_constraintTop_toTopOf="@+id/setting_second_label_message_atme" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="16dp"
+                android:layout_marginEnd="9dp"
+                app:layout_constraintBottom_toBottomOf="@+id/setting_second_message_statue_label_atme"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/setting_second_message_statue_label_atme"
+                app:layout_constraintTop_toTopOf="@+id/setting_second_message_statue_label_atme"
+                app:srcCompat="@drawable/icon_arrow_right" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/line_313131"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/setting_second_label_message_atme" />
+
+
+            <TextView
+                android:onClick="@{settingSecondPageOnClick}"
+                android:id="@+id/setting_second_label_comment"
+                android:layout_width="0dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="1dp"
+                android:background="@color/bottom_bar_bg"
+                android:gravity="center_vertical|left"
+                android:paddingLeft="15dp"
+                android:text="评论"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/setting_second_label_message_atme" />
+            <TextView
+                android:id="@+id/setting_second_comment_statue_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="38dp"
+                android:text="所有人"
+                android:textColor="@color/bottom_text_color"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="@+id/setting_second_label_comment"
+                app:layout_constraintEnd_toEndOf="@+id/setting_second_label_comment"
+                app:layout_constraintTop_toTopOf="@+id/setting_second_label_comment" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="16dp"
+                android:layout_marginEnd="9dp"
+                app:layout_constraintBottom_toBottomOf="@+id/setting_second_comment_statue_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/setting_second_comment_statue_label"
+                app:layout_constraintTop_toTopOf="@+id/setting_second_comment_statue_label"
+                app:srcCompat="@drawable/icon_arrow_right" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/line_313131"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/setting_second_label_message_atme" />
+
+
+            <TextView
+                android:onClick="@{settingSecondPageOnClick}"
+                android:id="@+id/setting_second_label_zan"
+                android:layout_width="0dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="1dp"
+                android:background="@color/bottom_bar_bg"
+                android:gravity="center_vertical|left"
+                android:paddingLeft="15dp"
+                android:text="赞"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/setting_second_label_comment" />
+            <TextView
+                android:id="@+id/setting_second_zan_statue_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="38dp"
+                android:text="所有人"
+                android:textColor="@color/bottom_text_color"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="@+id/setting_second_label_zan"
+                app:layout_constraintEnd_toEndOf="@+id/setting_second_label_zan"
+                app:layout_constraintTop_toTopOf="@+id/setting_second_label_zan" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="16dp"
+                android:layout_marginEnd="9dp"
+                app:layout_constraintBottom_toBottomOf="@+id/setting_second_zan_statue_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/setting_second_zan_statue_label"
+                app:layout_constraintTop_toTopOf="@+id/setting_second_zan_statue_label"
+                app:srcCompat="@drawable/icon_arrow_right" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/line_313131"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/setting_second_label_zan" />
+
+            <TextView
+                android:onClick="@{settingSecondPageOnClick}"
+                android:id="@+id/setting_second_label_personal_push_toggle"
+                android:layout_width="0dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="11dp"
+                android:background="@color/bottom_bar_bg"
+                android:gravity="center_vertical|left"
+                android:paddingLeft="15dp"
+                android:text="私信和推送"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/setting_second_label_zan" />
+
+            <TextView
+                android:id="@+id/setting_second_personal_push_statue_label_toggle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="18dp"
+                android:text="已开启"
+                android:textColor="@color/bottom_text_color"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="@+id/setting_second_label_personal_push_toggle"
+                app:layout_constraintEnd_toEndOf="@+id/setting_second_label_personal_push_toggle"
+                app:layout_constraintTop_toTopOf="@+id/setting_second_label_personal_push_toggle" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/line_313131"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/setting_second_label_personal_push_toggle" />
+        </android.support.constraint.ConstraintLayout>
+        <!--########隐私设置########-->
+        <android.support.constraint.ConstraintLayout
+            android:visibility="gone"
+            android:id="@+id/setting_second_privacy"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/setting_second_text_title">
+            <TextView
+                android:onClick="@{settingSecondPageOnClick}"
+                android:id="@+id/setting_second_privacy_label_permission_contact"
+                android:layout_width="0dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="11dp"
+                android:background="@color/bottom_bar_bg"
+                android:gravity="center_vertical|left"
+                android:paddingLeft="15dp"
+                android:text="允许推荐通讯录好友"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/setting_second_privacy_permission_statue_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="18dp"
+                android:text="开启"
+                android:textColor="@color/bottom_text_color"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="@+id/setting_second_privacy_label_permission_contact"
+                app:layout_constraintEnd_toEndOf="@+id/setting_second_privacy_label_permission_contact"
+                app:layout_constraintTop_toTopOf="@+id/setting_second_privacy_label_permission_contact" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/line_313131"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/setting_second_privacy_label_permission_contact" />
+            <TextView
+                android:onClick="@{settingSecondPageOnClick}"
+                android:id="@+id/setting_second_privacy_label_permission_contact_search"
+                android:layout_width="0dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="1dp"
+                android:background="@color/bottom_bar_bg"
+                android:gravity="center_vertical|left"
+                android:paddingLeft="15dp"
+                android:text="允许通过手机号搜到我"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/setting_second_privacy_label_permission_contact" />
+
+            <TextView
+                android:id="@+id/setting_second_privacy_permission_statue_search_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="18dp"
+                android:text="开启"
+                android:textColor="@color/bottom_text_color"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="@+id/setting_second_privacy_label_permission_contact_search"
+                app:layout_constraintEnd_toEndOf="@+id/setting_second_privacy_label_permission_contact_search"
+                app:layout_constraintTop_toTopOf="@+id/setting_second_privacy_label_permission_contact_search" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/line_313131"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/setting_second_privacy_label_permission_contact_search" />
+        </android.support.constraint.ConstraintLayout>
+        <!--########通用设置########-->
+        <android.support.constraint.ConstraintLayout
+            android:visibility="gone"
+            android:id="@+id/setting_second_general"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/setting_second_text_title">
+            <TextView
+                android:onClick="@{settingSecondPageOnClick}"
+                android:id="@+id/setting_second_general_label_player"
+                android:layout_width="0dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="11dp"
+                android:background="@color/bottom_bar_bg"
+                android:gravity="center_vertical|left"
+                android:paddingLeft="15dp"
+                android:text="视频自动播放"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/setting_second_general_player_statue_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="38dp"
+                android:text="仅wifi"
+                android:textColor="@color/bottom_text_color"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="@+id/setting_second_general_label_player"
+                app:layout_constraintEnd_toEndOf="@+id/setting_second_general_label_player"
+                app:layout_constraintTop_toTopOf="@+id/setting_second_general_label_player" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="16dp"
+                android:layout_marginEnd="9dp"
+                app:layout_constraintBottom_toBottomOf="@+id/setting_second_general_player_statue_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/setting_second_general_player_statue_label"
+                app:layout_constraintTop_toTopOf="@+id/setting_second_general_player_statue_label"
+                app:srcCompat="@drawable/icon_arrow_right" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/line_313131"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/setting_second_general_label_player" />
+
+            <TextView
+                android:onClick="@{settingSecondPageOnClick}"
+                android:id="@+id/setting_second_general_label_size"
+                android:layout_width="0dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="1dp"
+                android:background="@color/bottom_bar_bg"
+                android:gravity="center_vertical|left"
+                android:paddingLeft="15dp"
+                android:text="字号大小"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/setting_second_general_label_player" />
+            <TextView
+                android:id="@+id/setting_second_general_size_statue_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="38dp"
+                android:text="小"
+                android:textColor="@color/bottom_text_color"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="@+id/setting_second_general_label_size"
+                app:layout_constraintEnd_toEndOf="@+id/setting_second_general_label_size"
+                app:layout_constraintTop_toTopOf="@+id/setting_second_general_label_size" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="16dp"
+                android:layout_marginEnd="9dp"
+                app:layout_constraintBottom_toBottomOf="@+id/setting_second_general_size_statue_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/setting_second_general_size_statue_label"
+                app:layout_constraintTop_toTopOf="@+id/setting_second_general_size_statue_label"
+                app:srcCompat="@drawable/icon_arrow_right" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/line_313131"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/setting_second_general_label_size" />
+        </android.support.constraint.ConstraintLayout>
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

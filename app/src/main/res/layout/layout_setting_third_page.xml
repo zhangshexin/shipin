@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="settingThirdPageOnClick"
+            type="android.view.View.OnClickListener"/>
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary">
+        <!--标题栏-->
+        <TextView
+            android:id="@+id/setting_third_text_title"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:background="@color/bottom_bar_bg"
+            android:gravity="center"
+            android:text="个人信息"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:onClick="@{settingThirdPageOnClick}"
+            android:id="@+id/back_btn"
+            android:layout_width="30dp"
+            android:layout_height="44dp"
+            android:padding="12dp"
+            android:src="@drawable/icon_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <!--【设置】三级页分类处理-->
+        <!--######个人信息#######-->
+        <android.support.constraint.ConstraintLayout
+            android:visibility="gone"
+            android:id="@+id/setting_third_account"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/setting_third_text_title">
+
+            <TextView
+                android:id="@+id/setting_third_label_name"
+                android:layout_width="0dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="11dp"
+                android:background="@color/bottom_bar_bg"
+                android:gravity="left|center_vertical"
+                android:paddingLeft="18dp"
+                android:text="真实姓名"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/setting_third_account" />
+
+            <EditText
+                android:id="@+id/setting_third_edi_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="13sp"
+                android:layout_marginStart="130dp"
+                android:background="@android:color/transparent"
+                android:gravity="center_vertical"
+                android:lines="1"
+                android:text="三毛立行"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="@+id/setting_third_label_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/setting_third_label_name"
+                app:layout_constraintTop_toTopOf="@+id/setting_third_label_name" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/line_313131"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/setting_third_label_name" />
+            <!--#########证件类型########-->
+            <TextView
+                android:id="@+id/setting_third_type_label"
+                android:layout_width="0dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="1dp"
+                android:background="@color/bottom_bar_bg"
+                android:gravity="center_vertical|left"
+                android:paddingLeft="15dp"
+                android:text="证件类型"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/setting_third_label_name" />
+
+            <TextView
+                android:id="@+id/setting_third_type_edi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="9dp"
+                android:layout_marginStart="130dp"
+                android:text="身份证"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="@+id/setting_third_type_label"
+                app:layout_constraintEnd_toEndOf="@+id/setting_third_type_label"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/setting_third_type_label" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/line_313131"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/setting_third_type_label" />
+            <!--#########身份证号########-->
+            <TextView
+                android:id="@+id/setting_third_id_label"
+                android:layout_width="0dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="1dp"
+                android:background="@color/bottom_bar_bg"
+                android:gravity="center_vertical|left"
+                android:paddingLeft="15dp"
+                android:text="身份证号"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/setting_third_type_label" />
+
+            <EditText
+                android:id="@+id/setting_third_id_edi"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="13sp"
+                android:layout_marginStart="130dp"
+                android:background="@android:color/transparent"
+                android:gravity="center_vertical"
+                android:lines="1"
+                android:text="1234567890x"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="@+id/setting_third_id_label"
+                app:layout_constraintEnd_toEndOf="@+id/setting_third_id_label"
+                app:layout_constraintStart_toStartOf="parent"
+
+                app:layout_constraintTop_toTopOf="@+id/setting_third_id_label" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/line_313131"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/setting_third_id_label" />
+            <!--#########手机号码########-->
+            <TextView
+                android:id="@+id/setting_third_phone_label"
+                android:layout_width="0dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="1dp"
+                android:background="@color/bottom_bar_bg"
+                android:gravity="center_vertical|left"
+                android:paddingLeft="15dp"
+                android:text="手机号码"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/setting_third_id_label" />
+
+            <EditText
+                android:id="@+id/setting_third_phone_edi"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="13sp"
+                android:layout_marginStart="130dp"
+                android:background="@android:color/transparent"
+                android:gravity="center_vertical"
+                android:lines="1"
+                android:text="15311413519"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="@+id/setting_third_phone_label"
+                app:layout_constraintEnd_toEndOf="@+id/setting_third_phone_label"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/setting_third_phone_label" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/line_313131"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/setting_third_phone_label" />
+            <!--#########个性签名########-->
+            <TextView
+                android:id="@+id/setting_third_sign_label"
+                android:layout_width="0dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="1dp"
+                android:background="@color/bottom_bar_bg"
+                android:gravity="center_vertical|left"
+                android:paddingLeft="15dp"
+                android:text="个性签名"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/setting_third_phone_label" />
+
+            <EditText
+                android:id="@+id/setting_third_sign_edi"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="13sp"
+                android:layout_marginStart="130dp"
+                android:background="@android:color/transparent"
+                android:gravity="center_vertical"
+                android:lines="1"
+                android:text="中国人是有骨气的人，不怕老美！"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="@+id/setting_third_sign_label"
+                app:layout_constraintEnd_toEndOf="@+id/setting_third_sign_label"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/setting_third_sign_label"
+                app:srcCompat="@drawable/icon_arrow_right" />
+        </android.support.constraint.ConstraintLayout>
+        <!--######通用设置#######-->
+        <!--****###wifi设置###****-->
+        <android.support.constraint.ConstraintLayout
+            android:visibility="gone"
+            android:id="@+id/setting_third_general_wifi"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/setting_third_text_title">
+            <TextView
+                android:id="@+id/setting_third_label_wifi4G"
+                android:layout_width="0dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="11dp"
+                android:background="@color/bottom_bar_bg"
+                android:gravity="center_vertical|left"
+                android:paddingLeft="15dp"
+                android:text="使用移动流量和WIFI"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/setting_third_label_wifi4G_checked"
+                android:layout_width="16dp"
+                android:layout_height="12dp"
+                android:layout_marginEnd="9dp"
+                app:layout_constraintBottom_toBottomOf="@+id/setting_third_label_wifi4G"
+                app:layout_constraintEnd_toEndOf="@+id/setting_third_label_wifi4G"
+                app:layout_constraintTop_toTopOf="@+id/setting_third_label_wifi4G"
+                android:src="@drawable/icon_tick" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/line_313131"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/setting_third_label_wifi4G" />
+
+            <TextView
+                android:id="@+id/setting_third_label_wifi"
+                android:layout_width="0dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="1dp"
+                android:background="@color/bottom_bar_bg"
+                android:gravity="center_vertical|left"
+                android:paddingLeft="15dp"
+                android:text="仅WIFI"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/setting_third_label_wifi4G" />
+            <ImageView
+                android:id="@+id/setting_third_label_wifi_checked"
+                android:visibility="gone"
+                android:layout_width="16dp"
+                android:layout_height="12dp"
+                android:layout_marginEnd="9dp"
+                app:layout_constraintBottom_toBottomOf="@+id/setting_third_label_wifi"
+                app:layout_constraintEnd_toEndOf="@+id/setting_third_label_wifi"
+                app:layout_constraintTop_toTopOf="@+id/setting_third_label_wifi"
+                android:src="@drawable/icon_tick" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/line_313131"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/setting_third_label_wifi" />
+
+            <TextView
+                android:id="@+id/setting_third_label_wifi_close"
+                android:layout_width="0dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="1dp"
+                android:background="@color/bottom_bar_bg"
+                android:gravity="center_vertical|left"
+                android:paddingLeft="15dp"
+                android:text="关闭"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/setting_third_label_wifi" />
+            <ImageView
+                android:id="@+id/setting_third_label_wifi_close_checked"
+                android:visibility="gone"
+                android:layout_width="16dp"
+                android:layout_height="12dp"
+                android:layout_marginEnd="9dp"
+                app:layout_constraintBottom_toBottomOf="@+id/setting_third_label_wifi_close"
+                app:layout_constraintEnd_toEndOf="@+id/setting_third_label_wifi_close"
+                app:layout_constraintTop_toTopOf="@+id/setting_third_label_wifi_close"
+                android:src="@drawable/icon_tick" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/line_313131"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/setting_third_label_wifi_close" />
+        </android.support.constraint.ConstraintLayout>
+        <!--****###字体设置###****-->
+        <android.support.constraint.ConstraintLayout
+            android:visibility="gone"
+            android:id="@+id/setting_third_general_size"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/setting_third_text_title">
+            <TextView
+                android:id="@+id/setting_third_label_size_0"
+                android:layout_width="0dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="11dp"
+                android:background="@color/bottom_bar_bg"
+                android:gravity="center_vertical|left"
+                android:paddingLeft="15dp"
+                android:text="大"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <ImageView
+                android:id="@+id/setting_third_label_size_0_checked"
+                android:layout_width="16dp"
+                android:layout_height="12dp"
+                android:layout_marginEnd="9dp"
+                app:layout_constraintBottom_toBottomOf="@+id/setting_third_label_size_0"
+                app:layout_constraintEnd_toEndOf="@+id/setting_third_label_size_0"
+                app:layout_constraintTop_toTopOf="@+id/setting_third_label_size_0"
+                android:src="@drawable/icon_tick" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/line_313131"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/setting_third_label_size_0" />
+
+            <TextView
+                android:id="@+id/setting_third_label_size_1"
+                android:layout_width="0dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="1dp"
+                android:background="@color/bottom_bar_bg"
+                android:gravity="center_vertical|left"
+                android:paddingLeft="15dp"
+                android:text="中"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/setting_third_label_size_0" />
+            <ImageView
+                android:id="@+id/setting_third_label_size_1_checked"
+                android:visibility="gone"
+                android:layout_width="16dp"
+                android:layout_height="12dp"
+                android:layout_marginEnd="9dp"
+                app:layout_constraintBottom_toBottomOf="@+id/setting_third_label_size_1"
+                app:layout_constraintEnd_toEndOf="@+id/setting_third_label_size_1"
+                app:layout_constraintTop_toTopOf="@+id/setting_third_label_size_1"
+                android:src="@drawable/icon_tick" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/line_313131"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/setting_third_label_size_1" />
+            <TextView
+                android:id="@+id/setting_third_label_size_2"
+                android:layout_width="0dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="1dp"
+                android:background="@color/bottom_bar_bg"
+                android:gravity="center_vertical|left"
+                android:paddingLeft="15dp"
+                android:text="小"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/setting_third_label_size_1" />
+            <ImageView
+                android:id="@+id/setting_third_label_size_2_checked"
+                android:visibility="gone"
+                android:layout_width="16dp"
+                android:layout_height="12dp"
+                android:layout_marginEnd="9dp"
+                app:layout_constraintBottom_toBottomOf="@+id/setting_third_label_size_2"
+                app:layout_constraintEnd_toEndOf="@+id/setting_third_label_size_2"
+                app:layout_constraintTop_toTopOf="@+id/setting_third_label_size_2"
+                android:src="@drawable/icon_tick" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/line_313131"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/setting_third_label_size_2" />
+        </android.support.constraint.ConstraintLayout>
+        <!--######消息设置#######-->
+        <!--****##@设置##****-->
+        <android.support.constraint.ConstraintLayout
+            android:visibility="gone"
+            android:id="@+id/setting_third_message_at"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/setting_third_text_title">
+            <TextView
+                android:id="@+id/setting_third_message_at_label_all"
+                android:layout_width="0dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="11dp"
+                android:background="@color/bottom_bar_bg"
+                android:gravity="center_vertical|left"
+                android:paddingLeft="15dp"
+                android:text="所有人"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <ImageView
+                android:id="@+id/setting_third_message_at_label_all_checked"
+                android:layout_width="16dp"
+                android:layout_height="12dp"
+                android:layout_marginEnd="9dp"
+                app:layout_constraintBottom_toBottomOf="@+id/setting_third_message_at_label_all"
+                app:layout_constraintEnd_toEndOf="@+id/setting_third_message_at_label_all"
+                app:layout_constraintTop_toTopOf="@+id/setting_third_message_at_label_all"
+                android:src="@drawable/icon_tick" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/line_313131"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/setting_third_message_at_label_all" />
+
+            <TextView
+                android:id="@+id/setting_third_message_at_label_my"
+                android:layout_width="0dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="1dp"
+                android:background="@color/bottom_bar_bg"
+                android:gravity="center_vertical|left"
+                android:paddingLeft="15dp"
+                android:text="中"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/setting_third_message_at_label_all" />
+            <ImageView
+                android:id="@+id/setting_third_message_at_label_my_checked"
+                android:visibility="gone"
+                android:layout_width="16dp"
+                android:layout_height="12dp"
+                android:layout_marginEnd="9dp"
+                app:layout_constraintBottom_toBottomOf="@+id/setting_third_message_at_label_my"
+                app:layout_constraintEnd_toEndOf="@+id/setting_third_message_at_label_my"
+                app:layout_constraintTop_toTopOf="@+id/setting_third_message_at_label_my"
+                android:src="@drawable/icon_tick" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/line_313131"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/setting_third_message_at_label_my" />
+            <TextView
+                android:id="@+id/setting_third_message_at_label_close"
+                android:layout_width="0dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="1dp"
+                android:background="@color/bottom_bar_bg"
+                android:gravity="center_vertical|left"
+                android:paddingLeft="15dp"
+                android:text="小"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/setting_third_message_at_label_my" />
+            <ImageView
+                android:id="@+id/setting_third_message_at_close_label_checked"
+                android:visibility="gone"
+                android:layout_width="16dp"
+                android:layout_height="12dp"
+                android:layout_marginEnd="9dp"
+                app:layout_constraintBottom_toBottomOf="@+id/setting_third_message_at_label_close"
+                app:layout_constraintEnd_toEndOf="@+id/setting_third_message_at_label_close"
+                app:layout_constraintTop_toTopOf="@+id/setting_third_message_at_label_close"
+                android:src="@drawable/icon_tick" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/line_313131"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/setting_third_message_at_label_close" />
+        </android.support.constraint.ConstraintLayout>
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

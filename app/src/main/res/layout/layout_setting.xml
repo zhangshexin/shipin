@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="settingOnClick"
+            type="android.view.View.OnClickListener"/>
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:id="@+id/setting_text_title"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:background="@color/bottom_bar_bg"
+            android:gravity="center"
+            android:text="设置"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/back_btn"
+            android:layout_width="30dp"
+            android:layout_height="44dp"
+            android:padding="12dp"
+            android:src="@drawable/icon_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <!--#########账号设置########-->
+        <TextView
+            android:onClick="@{settingOnClick}"
+            android:id="@+id/setting_label_account"
+            android:layout_width="0dp"
+            android:layout_height="43dp"
+            android:layout_marginTop="11dp"
+            android:background="@color/bottom_bar_bg"
+            android:gravity="center_vertical|left"
+            android:paddingLeft="15dp"
+            android:text="账号设置"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/setting_text_title" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="16dp"
+            android:layout_marginEnd="9dp"
+            app:layout_constraintBottom_toBottomOf="@+id/setting_label_account"
+            app:layout_constraintEnd_toEndOf="@+id/setting_label_account"
+            app:layout_constraintTop_toTopOf="@+id/setting_label_account"
+            app:srcCompat="@drawable/icon_arrow_right" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/line_313131"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/setting_label_account" />
+
+        <!--#########账号安全########-->
+
+        <TextView
+            android:onClick="@{settingOnClick}"
+            android:id="@+id/setting_label_account_ser"
+            android:layout_width="0dp"
+            android:layout_height="43dp"
+            android:layout_marginTop="1dp"
+            android:background="@color/bottom_bar_bg"
+            android:gravity="center_vertical|left"
+            android:paddingLeft="15dp"
+            android:text="账号安全"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/setting_label_account" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="16dp"
+            android:layout_marginEnd="9dp"
+            app:layout_constraintBottom_toBottomOf="@+id/setting_label_account_ser"
+            app:layout_constraintEnd_toEndOf="@+id/setting_label_account_ser"
+            app:layout_constraintTop_toTopOf="@+id/setting_label_account_ser"
+            app:srcCompat="@drawable/icon_arrow_right" />
+
+
+
+        <!--########消息设置#########-->
+
+        <TextView
+            android:onClick="@{settingOnClick}"
+            android:id="@+id/setting_label_message"
+            android:layout_width="0dp"
+            android:layout_height="43dp"
+            android:layout_marginTop="11dp"
+            android:background="@color/bottom_bar_bg"
+            android:gravity="center_vertical|left"
+            android:paddingLeft="16dp"
+            android:text="消息设置"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/setting_label_account_ser" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="16dp"
+            android:layout_marginEnd="9dp"
+            app:layout_constraintBottom_toBottomOf="@+id/setting_label_message"
+            app:layout_constraintEnd_toEndOf="@+id/setting_label_message"
+            app:layout_constraintTop_toTopOf="@+id/setting_label_message"
+            app:srcCompat="@drawable/icon_arrow_right" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/line_313131"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/setting_label_message" />
+        <!--########隐私设置#########-->
+        <TextView
+            android:onClick="@{settingOnClick}"
+            android:id="@+id/setting_label_personal"
+            android:layout_width="0dp"
+            android:layout_height="43dp"
+            android:layout_marginTop="1dp"
+            android:background="@color/bottom_bar_bg"
+            android:gravity="center_vertical|left"
+            android:paddingLeft="15dp"
+            android:text="隐私设置"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/setting_label_message" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="16dp"
+            android:layout_marginEnd="9dp"
+            app:layout_constraintBottom_toBottomOf="@+id/setting_label_personal"
+            app:layout_constraintEnd_toEndOf="@+id/setting_label_personal"
+            app:layout_constraintTop_toTopOf="@+id/setting_label_personal"
+            app:srcCompat="@drawable/icon_arrow_right" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/line_313131"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/setting_label_personal" />
+        <!--########通用设置#########-->
+        <TextView
+            android:onClick="@{settingOnClick}"
+            android:id="@+id/setting_label_general"
+            android:layout_width="0dp"
+            android:layout_height="43dp"
+            android:layout_marginTop="1dp"
+            android:background="@color/bottom_bar_bg"
+            android:gravity="center_vertical|left"
+            android:paddingLeft="15dp"
+            android:text="通用设置"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/setting_label_personal" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="16dp"
+            android:layout_marginEnd="9dp"
+            app:layout_constraintBottom_toBottomOf="@+id/setting_label_general"
+            app:layout_constraintEnd_toEndOf="@+id/setting_label_general"
+            app:layout_constraintTop_toTopOf="@+id/setting_label_general"
+            app:srcCompat="@drawable/icon_arrow_right" />
+
+
+        <!--########清理缓存#########-->
+        <TextView
+            android:id="@+id/setting_label_clear"
+            android:layout_width="0dp"
+            android:layout_height="43dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/bottom_bar_bg"
+            android:gravity="center_vertical|left"
+            android:paddingLeft="15dp"
+            android:text="清理缓存"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/setting_label_general" />
+
+
+
+
+        <TextView
+            android:onClick="@{settingOnClick}"
+            android:id="@+id/setting_btn_clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="27dp"
+            android:text="清理"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/setting_label_clear"
+            app:layout_constraintEnd_toEndOf="@+id/setting_label_clear"
+            app:layout_constraintTop_toTopOf="@+id/setting_label_clear" />
+
+        <TextView
+            android:id="@+id/setting_text_memory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="28dp"
+            android:text="30M"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@+id/setting_btn_clear"
+            app:layout_constraintEnd_toStartOf="@+id/setting_btn_clear"
+            app:layout_constraintTop_toTopOf="@+id/setting_btn_clear" />
+
+        <TextView
+            android:onClick="@{settingOnClick}"
+            android:id="@+id/setting_btn_login_out"
+            android:layout_width="0dp"
+            android:layout_height="43dp"
+            android:layout_marginTop="36dp"
+            android:background="@color/bottom_bar_bg"
+            android:gravity="center"
+            android:text="退出当前账号"
+            android:textColor="@color/text_ff3333"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/setting_text_memory" />
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

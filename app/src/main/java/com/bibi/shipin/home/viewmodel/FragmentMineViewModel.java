@@ -10,6 +10,7 @@ import com.bibi.shipin.login.LoginChoiceView;
 import com.bibi.shipin.login.LoginView;
 import com.bibi.shipin.mine.MyCollectionView;
 import com.bibi.shipin.mine.MyFansAndAttentionsView;
+import com.bibi.shipin.mine.SettingView;
 import com.bibi.shipin.mine.adapter.MyFansAndAttentionsAdapter;
 import com.bibi.shipin.mine.viewmodel.MyFansAndAttentionsViewModel;
 
@@ -47,7 +48,14 @@ public class FragmentMineViewModel extends BaseViewModel implements View.OnClick
             case R.id.mine_attentions_btn:
                 goFansAttentions(2);
                 break;
+            case R.id.mine_setting:
+                goSetting();
+                break;
         }
+    }
+
+    private void goSetting() {
+        fragmentMine.startActivity(new Intent(fragmentMine.getContext(), SettingView.class));
     }
 
     private void goFansAttentions(int tag) {
