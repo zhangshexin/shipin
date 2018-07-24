@@ -2,6 +2,7 @@ package com.bibi.shipin.home.viewmodel.adapter;
 
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -23,10 +24,14 @@ import com.bibi.shipin.home.beans.WorkBean;
  * $是结束符；
  * <p>
  * d/s/.2f代表的是整数/字符串/保留2位小数点的浮点数
+ *
+ *
+ * 主页适配器
  */
 
 public class HomeListAdapter extends BaseAdapter<WorkBean, BaseViewHolder> implements View.OnClickListener{
 
+    private String TAG=HomeListAdapter.class.getName();
     private FragmentHome fragmentHome;
     //是否为创业领袖页
     public static final int FLAG_CREATE = 0;
@@ -54,6 +59,8 @@ public class HomeListAdapter extends BaseAdapter<WorkBean, BaseViewHolder> imple
     @Override
     public void onBindVH(BaseViewHolder baseViewHolder, int position) {
         LayoutFragmentHomeListItemBinding binding = (LayoutFragmentHomeListItemBinding) baseViewHolder.getBinding();
+        binding.setHomeListAdapter(this);
+        binding.setPosition(position);
         binding.setHomeAdapterClick(this);
         switch (flag) {
             case FLAG_CREATE:
@@ -86,6 +93,11 @@ public class HomeListAdapter extends BaseAdapter<WorkBean, BaseViewHolder> imple
                 vm.toggleShare(true,null);
                 break;
         }
+    }
+
+    public void player(int position){
+        //去播放页
+        Log.e(TAG, "player: ---------------------"+position);
     }
 
     private void goSomeBodyHomePage() {

@@ -13,6 +13,7 @@ import com.bibi.shipin.home.beans.WorkBean;
 
 /**
  * Created by zhangshexin on 2018/7/12.
+ * 某人主页适配器
  */
 
 public class SomeHomeListAdapter extends BaseAdapter<WorkBean, BaseViewHolder>{
