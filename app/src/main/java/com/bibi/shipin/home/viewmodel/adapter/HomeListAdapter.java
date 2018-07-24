@@ -15,6 +15,7 @@ import com.bibi.shipin.home.HomeView;
 import com.bibi.shipin.home.HomeViewModel;
 import com.bibi.shipin.home.SomebodyHomePageView;
 import com.bibi.shipin.home.beans.WorkBean;
+import com.bibi.shipin.player.VideoPlayerView;
 
 /**
  * Created by zhangshexin on 2018/7/4.
@@ -98,6 +99,8 @@ public class HomeListAdapter extends BaseAdapter<WorkBean, BaseViewHolder> imple
     public void player(int position){
         //去播放页
         Log.e(TAG, "player: ---------------------"+position);
+        Intent intent=new Intent(fragmentHome.getContext(), VideoPlayerView.class);
+        fragmentHome.getActivity().startActivity(intent);
     }
 
     private void goSomeBodyHomePage() {

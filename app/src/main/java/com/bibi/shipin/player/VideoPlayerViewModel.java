@@ -80,7 +80,7 @@ public class VideoPlayerViewModel extends BaseViewModel implements View.OnClickL
                 if (aliyunVodPlayer != null) {
                     aliyunVodPlayer.setDisplay(holder);
                     AliyunLocalSource.AliyunLocalSourceBuilder asb = new AliyunLocalSource.AliyunLocalSourceBuilder();
-                    asb.setSource(videoPlayerView.getIntent().getStringExtra("outputPath"));
+                    asb.setSource("http://player.alicdn.com/video/aliyunmedia.mp4");
                     asb.setTitle("本地");
                     AliyunLocalSource mLocalSource = asb.build();
                     //处理视频播放
