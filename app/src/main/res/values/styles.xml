@@ -11,4 +11,7 @@
     <style name="AppTheme.NoTitle" parent="AppTheme">
         <item name="windowNoTitle">true</item>
     </style>
+    <style name="Theme.beginBackground" parent="AppTheme.NoTitle">
+        <item name="android:windowBackground">@null</item>
+    </style>
 </resources>
