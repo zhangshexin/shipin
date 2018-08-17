@@ -16,6 +16,7 @@
             android:layout_width="30dp"
             android:layout_height="44dp"
             android:padding="12dp"
+            android:onClick="@{registeClick}"
             android:src="@drawable/icon_back"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

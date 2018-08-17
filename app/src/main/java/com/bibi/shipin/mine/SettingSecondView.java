@@ -16,7 +16,7 @@ public class SettingSecondView extends BaseView<LayoutSettingSecondPageBinding,S
     public static final String EXTRA_TAG="SettingSecondView_1";
 
     public static enum  SettingSecond implements Serializable{
-        ACCOUNT("个人信息",0),GENERAL_WIFI("WIFI设置",1),GENERAL_SIZE("字体设置",2),MESSAGE_AT("\\@设置",3);
+        ACCOUNT("个人信息",0),GENERAL_WIFI("WIFI设置",1),GENERAL_SIZE("字体设置",2),MESSAGE_AT("@设置",3);
         private String title;
         private int code;
         SettingSecond(String title,int code){

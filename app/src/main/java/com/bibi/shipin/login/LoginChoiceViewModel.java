@@ -30,6 +30,7 @@ public class LoginChoiceViewModel extends BaseViewModel implements View.OnClickL
                 break;
             case R.id.login_choice_btn_register:
                 //去注册
+                loginChoiceView.startActivity(new Intent(loginChoiceView,RegisteView.class));
                 break;
         }
     }

@@ -33,6 +33,7 @@
         <activity android:name=".player.VideoPlayerView" android:screenOrientation="portrait" android:label="播放页"/>
         <activity android:name=".login.LoginChoiceView" android:screenOrientation="portrait" android:label="登录注册选择页"/>
         <activity android:name=".login.LoginView" android:screenOrientation="portrait" android:label="登录页"/>
+        <activity android:name=".login.RegisteView" android:screenOrientation="portrait" android:label="注册页"/>
         <activity android:name=".mine.MyCollectionView" android:screenOrientation="portrait" android:label="我的收藏"/>
         <activity android:name=".mine.MyFansAndAttentionsView" android:screenOrientation="portrait" android:label="我的粉丝/我的关注"/>
         <activity android:name=".home.SomebodyHomePageView" android:screenOrientation="portrait" android:label="某人的主页"/>
